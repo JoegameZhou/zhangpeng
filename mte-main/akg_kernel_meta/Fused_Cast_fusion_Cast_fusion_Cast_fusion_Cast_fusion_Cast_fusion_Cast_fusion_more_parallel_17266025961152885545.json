@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1792,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_fusion_Cast_fusion_Cast_fusion_Cast_fusion_Cast_fusion_Cast_fusion_more_parallel_17266025961152885545_kernel0",
+    "sha256":"a9c892afd81378f4af82efdd390549ebfd9626485e8f923db0efa525a9de7a5a",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

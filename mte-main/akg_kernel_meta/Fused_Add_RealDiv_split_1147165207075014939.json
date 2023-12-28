@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Add_RealDiv_split_1147165207075014939_kernel0",
+    "sha256":"61baf1bbf4cab6ec57cca7eeed10b3694b7cf8a2ecca2de72e835ffa04c7ed27",
+    "threadIdx.x":1,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

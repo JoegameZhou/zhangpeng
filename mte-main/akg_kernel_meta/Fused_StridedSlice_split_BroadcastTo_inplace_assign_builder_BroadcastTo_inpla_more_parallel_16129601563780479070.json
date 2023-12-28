@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":14,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_StridedSlice_split_BroadcastTo_inplace_assign_builder_BroadcastTo_inpla_more_parallel_16129601563780479070_kernel0",
+    "sha256":"b27ab3884885c1552fdd90092e97687a5f6370599b42331c38291c24a3f45c14",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

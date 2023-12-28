@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1536,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Dropout_2814764400399697263_kernel0",
+    "sha256":"c3c9f375c501ca598d201d0ed9f82216fbfaec3c3a26f384ab6aa511d90e3587",
+    "threadIdx.x":512,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

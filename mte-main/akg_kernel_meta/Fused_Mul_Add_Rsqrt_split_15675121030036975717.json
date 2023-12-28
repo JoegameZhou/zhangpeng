@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":18,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Mul_Add_Rsqrt_split_15675121030036975717_kernel0",
+    "sha256":"072068ff2db76a35dcdafb3f1a23988438dbb1eff0746a6762288a5eb24c29d2",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

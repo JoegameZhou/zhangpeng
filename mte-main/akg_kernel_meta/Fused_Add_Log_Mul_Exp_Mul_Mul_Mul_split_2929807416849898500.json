@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":6,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Add_Log_Mul_Exp_Mul_Mul_Mul_split_2929807416849898500_kernel0",
+    "sha256":"eef63ee993c1057f2824535b40736b55453df1382fa10eb021c0fe2deb96e78c",
+    "threadIdx.x":1024,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

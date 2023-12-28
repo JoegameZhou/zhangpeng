@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":16,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_ElemAny_Assign_split_4561717927541891430_kernel0",
+    "sha256":"9fd6e8a4fa914e146dc0843b309eebecfe09b881d86e839ff78c306b74ccfa53",
+    "threadIdx.x":32,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

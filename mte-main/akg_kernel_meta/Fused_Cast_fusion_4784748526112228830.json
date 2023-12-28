@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1024,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_fusion_4784748526112228830_kernel0",
+    "sha256":"684078bd0664ebddb69ff90845407fa5f8e4a9fcbe65a80af2e79bd679eb39ff",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

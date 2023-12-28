@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":356,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_BroadcastTo_inplace_assign_builder_StridedSlice_split_Cast_Reshape_Resh_more_parallel_15136623444023993376_kernel0",
+    "sha256":"02a46797771952239eb8ac493bce6f075599631dadf737b137746780993ae9ab",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":4,
+    "blockIdx.y":8,
+    "blockIdx.z":96,
+    "kernelName":"Fused_Reshape_Transpose_fusion_15491041271298925244_kernel0",
+    "sha256":"7a46fd9b00a0e5401ab7c07fb1f3cd965788467873c1e4189c998e9468e866a1",
+    "threadIdx.x":1024,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

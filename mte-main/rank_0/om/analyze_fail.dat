@@ -1,0 +1,1290 @@
+# 1.This file shows the parsed IR info when graph evaluating failed to help find the problem.
+# 2.You can search the last `------------------------>` to the node which is inferred failed.
+# 3.Refer to https://www.mindspore.cn/search?inputValue=analyze_fail.dat to get more instructions.
+# ===============================================================================
+
+# [No.1] Default_wrapper.18
+# In file /code/mte/src/transformer_for_train.py:252/    def construct(self,/
+funcgraph fg_18(
+        %para1 : Tensor(I32)[96, 16]    # source_eos_ids
+        , %para2 : Tensor(I32)[96, 16]    # source_eos_mask
+        , %para3 : Tensor(I32)[96, 16]    # target_sos_ids
+        , %para4 : Tensor(I32)[96, 16]    # target_sos_mask
+        , %para5 : Tensor(I32)[96, 16]    # target_eos_ids
+        , %para6 : Tensor(I32)[96, 16]    # target_eos_mask
+        , %para7 : Ref[Tensor(F32)][]    # loss_scale
+        , %para8 : Ref[Tensor(I32)][]    # current_iterator_step
+        , %para9 : Ref[Tensor(F32)][8, 10719, 8]    # tfm_embedding_lookup.weight1
+        , %para10 : Ref[Tensor(F32)][8, 10719, 8]    # tfm_embedding_lookup.weight2
+        , %para11 : Ref[Tensor(F32)][8, 10719, 8]    # tfm_embedding_lookup.weight3
+        , %para12 : Ref[Tensor(F32)][10149, 512]    # tfm_embedding_lookup.embedding_table
+        , %para13 : Ref[Tensor(F32)][512]    # tfm_embedding_lookup.ln.gamma
+        , %para14 : Ref[Tensor(F32)][512]    # tfm_embedding_lookup.ln.beta
+        , %para15 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.0.attention.attention.query_layer.weight
+        , %para16 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.0.attention.attention.key_layer.weight
+        , %para17 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.0.attention.attention.value_layer.weight
+        , %para18 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.0.attention.attention.out_layer.weight
+        , %para19 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.0.attention.preprocess.layernorm.gamma
+        , %para20 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.0.attention.preprocess.layernorm.beta
+        , %para21 : Ref[Tensor(F32)][4096, 512]    # tfm_encoder.layers.0.feedforward.conv1.weight
+        , %para22 : Ref[Tensor(F32)][4096]    # tfm_encoder.layers.0.feedforward.conv1.bias
+        , %para23 : Ref[Tensor(F32)][512, 4096]    # tfm_encoder.layers.0.feedforward.conv2.weight
+        , %para24 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.0.feedforward.conv2.bias
+        , %para25 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para26 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para27 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.1.attention.attention.query_layer.weight
+        , %para28 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.1.attention.attention.key_layer.weight
+        , %para29 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.1.attention.attention.value_layer.weight
+        , %para30 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.1.attention.attention.out_layer.weight
+        , %para31 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.1.attention.preprocess.layernorm.gamma
+        , %para32 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.1.attention.preprocess.layernorm.beta
+        , %para33 : Ref[Tensor(F32)][4096, 512]    # tfm_encoder.layers.1.feedforward.conv1.weight
+        , %para34 : Ref[Tensor(F32)][4096]    # tfm_encoder.layers.1.feedforward.conv1.bias
+        , %para35 : Ref[Tensor(F32)][512, 4096]    # tfm_encoder.layers.1.feedforward.conv2.weight
+        , %para36 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.1.feedforward.conv2.bias
+        , %para37 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para38 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para39 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.2.attention.attention.query_layer.weight
+        , %para40 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.2.attention.attention.key_layer.weight
+        , %para41 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.2.attention.attention.value_layer.weight
+        , %para42 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.2.attention.attention.out_layer.weight
+        , %para43 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.2.attention.preprocess.layernorm.gamma
+        , %para44 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.2.attention.preprocess.layernorm.beta
+        , %para45 : Ref[Tensor(F32)][4096, 512]    # tfm_encoder.layers.2.feedforward.conv1.weight
+        , %para46 : Ref[Tensor(F32)][4096]    # tfm_encoder.layers.2.feedforward.conv1.bias
+        , %para47 : Ref[Tensor(F32)][512, 4096]    # tfm_encoder.layers.2.feedforward.conv2.weight
+        , %para48 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.2.feedforward.conv2.bias
+        , %para49 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para50 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para51 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.3.attention.attention.query_layer.weight
+        , %para52 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.3.attention.attention.key_layer.weight
+        , %para53 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.3.attention.attention.value_layer.weight
+        , %para54 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.3.attention.attention.out_layer.weight
+        , %para55 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.3.attention.preprocess.layernorm.gamma
+        , %para56 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.3.attention.preprocess.layernorm.beta
+        , %para57 : Ref[Tensor(F32)][4096, 512]    # tfm_encoder.layers.3.feedforward.conv1.weight
+        , %para58 : Ref[Tensor(F32)][4096]    # tfm_encoder.layers.3.feedforward.conv1.bias
+        , %para59 : Ref[Tensor(F32)][512, 4096]    # tfm_encoder.layers.3.feedforward.conv2.weight
+        , %para60 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.3.feedforward.conv2.bias
+        , %para61 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para62 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para63 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.4.attention.attention.query_layer.weight
+        , %para64 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.4.attention.attention.key_layer.weight
+        , %para65 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.4.attention.attention.value_layer.weight
+        , %para66 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.4.attention.attention.out_layer.weight
+        , %para67 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.4.attention.preprocess.layernorm.gamma
+        , %para68 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.4.attention.preprocess.layernorm.beta
+        , %para69 : Ref[Tensor(F32)][4096, 512]    # tfm_encoder.layers.4.feedforward.conv1.weight
+        , %para70 : Ref[Tensor(F32)][4096]    # tfm_encoder.layers.4.feedforward.conv1.bias
+        , %para71 : Ref[Tensor(F32)][512, 4096]    # tfm_encoder.layers.4.feedforward.conv2.weight
+        , %para72 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.4.feedforward.conv2.bias
+        , %para73 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para74 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para75 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.5.attention.attention.query_layer.weight
+        , %para76 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.5.attention.attention.key_layer.weight
+        , %para77 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.5.attention.attention.value_layer.weight
+        , %para78 : Ref[Tensor(F32)][512, 512]    # tfm_encoder.layers.5.attention.attention.out_layer.weight
+        , %para79 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.5.attention.preprocess.layernorm.gamma
+        , %para80 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.5.attention.preprocess.layernorm.beta
+        , %para81 : Ref[Tensor(F32)][4096, 512]    # tfm_encoder.layers.5.feedforward.conv1.weight
+        , %para82 : Ref[Tensor(F32)][4096]    # tfm_encoder.layers.5.feedforward.conv1.bias
+        , %para83 : Ref[Tensor(F32)][512, 4096]    # tfm_encoder.layers.5.feedforward.conv2.weight
+        , %para84 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.5.feedforward.conv2.bias
+        , %para85 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para86 : Ref[Tensor(F32)][512]    # tfm_encoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para87 : Ref[Tensor(F32)][512]    # tfm_encoder.layer_preprocess.layernorm.gamma
+        , %para88 : Ref[Tensor(F32)][512]    # tfm_encoder.layer_preprocess.layernorm.beta
+        , %para89 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.self_attention.attention.query_layer.weight
+        , %para90 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.self_attention.attention.key_layer.weight
+        , %para91 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.self_attention.attention.value_layer.weight
+        , %para92 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.self_attention.attention.out_layer.weight
+        , %para93 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.self_attention.preprocess.layernorm.gamma
+        , %para94 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.self_attention.preprocess.layernorm.beta
+        , %para95 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.cross_attention.attention.query_layer.weight
+        , %para96 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.cross_attention.attention.key_layer.weight
+        , %para97 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.cross_attention.attention.value_layer.weight
+        , %para98 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.0.cross_attention.attention.out_layer.weight
+        , %para99 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.cross_attention.preprocess.layernorm.gamma
+        , %para100 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.cross_attention.preprocess.layernorm.beta
+        , %para101 : Ref[Tensor(F32)][4096, 512]    # tfm_decoder.layers.0.feedforward.conv1.weight
+        , %para102 : Ref[Tensor(F32)][4096]    # tfm_decoder.layers.0.feedforward.conv1.bias
+        , %para103 : Ref[Tensor(F32)][512, 4096]    # tfm_decoder.layers.0.feedforward.conv2.weight
+        , %para104 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.feedforward.conv2.bias
+        , %para105 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para106 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para107 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.self_attention.attention.query_layer.weight
+        , %para108 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.self_attention.attention.key_layer.weight
+        , %para109 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.self_attention.attention.value_layer.weight
+        , %para110 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.self_attention.attention.out_layer.weight
+        , %para111 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.self_attention.preprocess.layernorm.gamma
+        , %para112 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.self_attention.preprocess.layernorm.beta
+        , %para113 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.cross_attention.attention.query_layer.weight
+        , %para114 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.cross_attention.attention.key_layer.weight
+        , %para115 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.cross_attention.attention.value_layer.weight
+        , %para116 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.1.cross_attention.attention.out_layer.weight
+        , %para117 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.cross_attention.preprocess.layernorm.gamma
+        , %para118 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.cross_attention.preprocess.layernorm.beta
+        , %para119 : Ref[Tensor(F32)][4096, 512]    # tfm_decoder.layers.1.feedforward.conv1.weight
+        , %para120 : Ref[Tensor(F32)][4096]    # tfm_decoder.layers.1.feedforward.conv1.bias
+        , %para121 : Ref[Tensor(F32)][512, 4096]    # tfm_decoder.layers.1.feedforward.conv2.weight
+        , %para122 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.feedforward.conv2.bias
+        , %para123 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para124 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para125 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.self_attention.attention.query_layer.weight
+        , %para126 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.self_attention.attention.key_layer.weight
+        , %para127 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.self_attention.attention.value_layer.weight
+        , %para128 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.self_attention.attention.out_layer.weight
+        , %para129 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.self_attention.preprocess.layernorm.gamma
+        , %para130 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.self_attention.preprocess.layernorm.beta
+        , %para131 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.cross_attention.attention.query_layer.weight
+        , %para132 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.cross_attention.attention.key_layer.weight
+        , %para133 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.cross_attention.attention.value_layer.weight
+        , %para134 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.2.cross_attention.attention.out_layer.weight
+        , %para135 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.cross_attention.preprocess.layernorm.gamma
+        , %para136 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.cross_attention.preprocess.layernorm.beta
+        , %para137 : Ref[Tensor(F32)][4096, 512]    # tfm_decoder.layers.2.feedforward.conv1.weight
+        , %para138 : Ref[Tensor(F32)][4096]    # tfm_decoder.layers.2.feedforward.conv1.bias
+        , %para139 : Ref[Tensor(F32)][512, 4096]    # tfm_decoder.layers.2.feedforward.conv2.weight
+        , %para140 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.feedforward.conv2.bias
+        , %para141 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para142 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para143 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.self_attention.attention.query_layer.weight
+        , %para144 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.self_attention.attention.key_layer.weight
+        , %para145 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.self_attention.attention.value_layer.weight
+        , %para146 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.self_attention.attention.out_layer.weight
+        , %para147 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.self_attention.preprocess.layernorm.gamma
+        , %para148 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.self_attention.preprocess.layernorm.beta
+        , %para149 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.cross_attention.attention.query_layer.weight
+        , %para150 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.cross_attention.attention.key_layer.weight
+        , %para151 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.cross_attention.attention.value_layer.weight
+        , %para152 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.3.cross_attention.attention.out_layer.weight
+        , %para153 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.cross_attention.preprocess.layernorm.gamma
+        , %para154 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.cross_attention.preprocess.layernorm.beta
+        , %para155 : Ref[Tensor(F32)][4096, 512]    # tfm_decoder.layers.3.feedforward.conv1.weight
+        , %para156 : Ref[Tensor(F32)][4096]    # tfm_decoder.layers.3.feedforward.conv1.bias
+        , %para157 : Ref[Tensor(F32)][512, 4096]    # tfm_decoder.layers.3.feedforward.conv2.weight
+        , %para158 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.feedforward.conv2.bias
+        , %para159 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para160 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para161 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.self_attention.attention.query_layer.weight
+        , %para162 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.self_attention.attention.key_layer.weight
+        , %para163 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.self_attention.attention.value_layer.weight
+        , %para164 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.self_attention.attention.out_layer.weight
+        , %para165 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.self_attention.preprocess.layernorm.gamma
+        , %para166 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.self_attention.preprocess.layernorm.beta
+        , %para167 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.cross_attention.attention.query_layer.weight
+        , %para168 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.cross_attention.attention.key_layer.weight
+        , %para169 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.cross_attention.attention.value_layer.weight
+        , %para170 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.4.cross_attention.attention.out_layer.weight
+        , %para171 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.cross_attention.preprocess.layernorm.gamma
+        , %para172 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.cross_attention.preprocess.layernorm.beta
+        , %para173 : Ref[Tensor(F32)][4096, 512]    # tfm_decoder.layers.4.feedforward.conv1.weight
+        , %para174 : Ref[Tensor(F32)][4096]    # tfm_decoder.layers.4.feedforward.conv1.bias
+        , %para175 : Ref[Tensor(F32)][512, 4096]    # tfm_decoder.layers.4.feedforward.conv2.weight
+        , %para176 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.feedforward.conv2.bias
+        , %para177 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para178 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para179 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.self_attention.attention.query_layer.weight
+        , %para180 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.self_attention.attention.key_layer.weight
+        , %para181 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.self_attention.attention.value_layer.weight
+        , %para182 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.self_attention.attention.out_layer.weight
+        , %para183 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.self_attention.preprocess.layernorm.gamma
+        , %para184 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.self_attention.preprocess.layernorm.beta
+        , %para185 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.cross_attention.attention.query_layer.weight
+        , %para186 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.cross_attention.attention.key_layer.weight
+        , %para187 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.cross_attention.attention.value_layer.weight
+        , %para188 : Ref[Tensor(F32)][512, 512]    # tfm_decoder.layers.5.cross_attention.attention.out_layer.weight
+        , %para189 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.cross_attention.preprocess.layernorm.gamma
+        , %para190 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.cross_attention.preprocess.layernorm.beta
+        , %para191 : Ref[Tensor(F32)][4096, 512]    # tfm_decoder.layers.5.feedforward.conv1.weight
+        , %para192 : Ref[Tensor(F32)][4096]    # tfm_decoder.layers.5.feedforward.conv1.bias
+        , %para193 : Ref[Tensor(F32)][512, 4096]    # tfm_decoder.layers.5.feedforward.conv2.weight
+        , %para194 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.feedforward.conv2.bias
+        , %para195 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para196 : Ref[Tensor(F32)][512]    # tfm_decoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para197 : Ref[Tensor(F32)][512]    # tfm_decoder.layer_preprocess.layernorm.gamma
+        , %para198 : Ref[Tensor(F32)][512]    # tfm_decoder.layer_preprocess.layernorm.beta
+        , %para199 : Ref[Tensor(I32)][]    # last_overflow_iterator_step
+        , %para200 : Ref[Tensor(F32)][1]    # beta1_power
+        , %para201 : Ref[Tensor(F32)][1]    # beta2_power
+        , %para202 : Ref[Tensor(F32)][8, 10719, 8]    # moment1.tfm_embedding_lookup.weight1
+        , %para203 : Ref[Tensor(F32)][8, 10719, 8]    # moment1.tfm_embedding_lookup.weight2
+        , %para204 : Ref[Tensor(F32)][8, 10719, 8]    # moment1.tfm_embedding_lookup.weight3
+        , %para205 : Ref[Tensor(F32)][10149, 512]    # moment1.tfm_embedding_lookup.embedding_table
+        , %para206 : Ref[Tensor(F32)][512]    # moment1.tfm_embedding_lookup.ln.gamma
+        , %para207 : Ref[Tensor(F32)][512]    # moment1.tfm_embedding_lookup.ln.beta
+        , %para208 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.0.attention.attention.query_layer.weight
+        , %para209 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.0.attention.attention.key_layer.weight
+        , %para210 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.0.attention.attention.value_layer.weight
+        , %para211 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.0.attention.attention.out_layer.weight
+        , %para212 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.0.attention.preprocess.layernorm.gamma
+        , %para213 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.0.attention.preprocess.layernorm.beta
+        , %para214 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_encoder.layers.0.feedforward.conv1.weight
+        , %para215 : Ref[Tensor(F32)][4096]    # moment1.tfm_encoder.layers.0.feedforward.conv1.bias
+        , %para216 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_encoder.layers.0.feedforward.conv2.weight
+        , %para217 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.0.feedforward.conv2.bias
+        , %para218 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para219 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para220 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.1.attention.attention.query_layer.weight
+        , %para221 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.1.attention.attention.key_layer.weight
+        , %para222 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.1.attention.attention.value_layer.weight
+        , %para223 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.1.attention.attention.out_layer.weight
+        , %para224 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.1.attention.preprocess.layernorm.gamma
+        , %para225 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.1.attention.preprocess.layernorm.beta
+        , %para226 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_encoder.layers.1.feedforward.conv1.weight
+        , %para227 : Ref[Tensor(F32)][4096]    # moment1.tfm_encoder.layers.1.feedforward.conv1.bias
+        , %para228 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_encoder.layers.1.feedforward.conv2.weight
+        , %para229 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.1.feedforward.conv2.bias
+        , %para230 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para231 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para232 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.2.attention.attention.query_layer.weight
+        , %para233 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.2.attention.attention.key_layer.weight
+        , %para234 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.2.attention.attention.value_layer.weight
+        , %para235 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.2.attention.attention.out_layer.weight
+        , %para236 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.2.attention.preprocess.layernorm.gamma
+        , %para237 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.2.attention.preprocess.layernorm.beta
+        , %para238 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_encoder.layers.2.feedforward.conv1.weight
+        , %para239 : Ref[Tensor(F32)][4096]    # moment1.tfm_encoder.layers.2.feedforward.conv1.bias
+        , %para240 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_encoder.layers.2.feedforward.conv2.weight
+        , %para241 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.2.feedforward.conv2.bias
+        , %para242 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para243 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para244 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.3.attention.attention.query_layer.weight
+        , %para245 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.3.attention.attention.key_layer.weight
+        , %para246 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.3.attention.attention.value_layer.weight
+        , %para247 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.3.attention.attention.out_layer.weight
+        , %para248 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.3.attention.preprocess.layernorm.gamma
+        , %para249 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.3.attention.preprocess.layernorm.beta
+        , %para250 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_encoder.layers.3.feedforward.conv1.weight
+        , %para251 : Ref[Tensor(F32)][4096]    # moment1.tfm_encoder.layers.3.feedforward.conv1.bias
+        , %para252 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_encoder.layers.3.feedforward.conv2.weight
+        , %para253 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.3.feedforward.conv2.bias
+        , %para254 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para255 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para256 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.4.attention.attention.query_layer.weight
+        , %para257 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.4.attention.attention.key_layer.weight
+        , %para258 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.4.attention.attention.value_layer.weight
+        , %para259 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.4.attention.attention.out_layer.weight
+        , %para260 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.4.attention.preprocess.layernorm.gamma
+        , %para261 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.4.attention.preprocess.layernorm.beta
+        , %para262 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_encoder.layers.4.feedforward.conv1.weight
+        , %para263 : Ref[Tensor(F32)][4096]    # moment1.tfm_encoder.layers.4.feedforward.conv1.bias
+        , %para264 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_encoder.layers.4.feedforward.conv2.weight
+        , %para265 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.4.feedforward.conv2.bias
+        , %para266 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para267 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para268 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.5.attention.attention.query_layer.weight
+        , %para269 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.5.attention.attention.key_layer.weight
+        , %para270 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.5.attention.attention.value_layer.weight
+        , %para271 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_encoder.layers.5.attention.attention.out_layer.weight
+        , %para272 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.5.attention.preprocess.layernorm.gamma
+        , %para273 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.5.attention.preprocess.layernorm.beta
+        , %para274 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_encoder.layers.5.feedforward.conv1.weight
+        , %para275 : Ref[Tensor(F32)][4096]    # moment1.tfm_encoder.layers.5.feedforward.conv1.bias
+        , %para276 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_encoder.layers.5.feedforward.conv2.weight
+        , %para277 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.5.feedforward.conv2.bias
+        , %para278 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para279 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para280 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layer_preprocess.layernorm.gamma
+        , %para281 : Ref[Tensor(F32)][512]    # moment1.tfm_encoder.layer_preprocess.layernorm.beta
+        , %para282 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.self_attention.attention.query_layer.weight
+        , %para283 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.self_attention.attention.key_layer.weight
+        , %para284 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.self_attention.attention.value_layer.weight
+        , %para285 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.self_attention.attention.out_layer.weight
+        , %para286 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.self_attention.preprocess.layernorm.gamma
+        , %para287 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.self_attention.preprocess.layernorm.beta
+        , %para288 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.cross_attention.attention.query_layer.weight
+        , %para289 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.cross_attention.attention.key_layer.weight
+        , %para290 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.cross_attention.attention.value_layer.weight
+        , %para291 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.0.cross_attention.attention.out_layer.weight
+        , %para292 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.cross_attention.preprocess.layernorm.gamma
+        , %para293 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.cross_attention.preprocess.layernorm.beta
+        , %para294 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_decoder.layers.0.feedforward.conv1.weight
+        , %para295 : Ref[Tensor(F32)][4096]    # moment1.tfm_decoder.layers.0.feedforward.conv1.bias
+        , %para296 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_decoder.layers.0.feedforward.conv2.weight
+        , %para297 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.feedforward.conv2.bias
+        , %para298 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para299 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para300 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.self_attention.attention.query_layer.weight
+        , %para301 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.self_attention.attention.key_layer.weight
+        , %para302 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.self_attention.attention.value_layer.weight
+        , %para303 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.self_attention.attention.out_layer.weight
+        , %para304 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.self_attention.preprocess.layernorm.gamma
+        , %para305 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.self_attention.preprocess.layernorm.beta
+        , %para306 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.cross_attention.attention.query_layer.weight
+        , %para307 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.cross_attention.attention.key_layer.weight
+        , %para308 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.cross_attention.attention.value_layer.weight
+        , %para309 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.1.cross_attention.attention.out_layer.weight
+        , %para310 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.cross_attention.preprocess.layernorm.gamma
+        , %para311 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.cross_attention.preprocess.layernorm.beta
+        , %para312 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_decoder.layers.1.feedforward.conv1.weight
+        , %para313 : Ref[Tensor(F32)][4096]    # moment1.tfm_decoder.layers.1.feedforward.conv1.bias
+        , %para314 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_decoder.layers.1.feedforward.conv2.weight
+        , %para315 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.feedforward.conv2.bias
+        , %para316 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para317 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para318 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.self_attention.attention.query_layer.weight
+        , %para319 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.self_attention.attention.key_layer.weight
+        , %para320 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.self_attention.attention.value_layer.weight
+        , %para321 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.self_attention.attention.out_layer.weight
+        , %para322 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.self_attention.preprocess.layernorm.gamma
+        , %para323 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.self_attention.preprocess.layernorm.beta
+        , %para324 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.cross_attention.attention.query_layer.weight
+        , %para325 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.cross_attention.attention.key_layer.weight
+        , %para326 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.cross_attention.attention.value_layer.weight
+        , %para327 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.2.cross_attention.attention.out_layer.weight
+        , %para328 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.cross_attention.preprocess.layernorm.gamma
+        , %para329 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.cross_attention.preprocess.layernorm.beta
+        , %para330 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_decoder.layers.2.feedforward.conv1.weight
+        , %para331 : Ref[Tensor(F32)][4096]    # moment1.tfm_decoder.layers.2.feedforward.conv1.bias
+        , %para332 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_decoder.layers.2.feedforward.conv2.weight
+        , %para333 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.feedforward.conv2.bias
+        , %para334 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para335 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para336 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.self_attention.attention.query_layer.weight
+        , %para337 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.self_attention.attention.key_layer.weight
+        , %para338 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.self_attention.attention.value_layer.weight
+        , %para339 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.self_attention.attention.out_layer.weight
+        , %para340 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.self_attention.preprocess.layernorm.gamma
+        , %para341 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.self_attention.preprocess.layernorm.beta
+        , %para342 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.cross_attention.attention.query_layer.weight
+        , %para343 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.cross_attention.attention.key_layer.weight
+        , %para344 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.cross_attention.attention.value_layer.weight
+        , %para345 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.3.cross_attention.attention.out_layer.weight
+        , %para346 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.cross_attention.preprocess.layernorm.gamma
+        , %para347 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.cross_attention.preprocess.layernorm.beta
+        , %para348 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_decoder.layers.3.feedforward.conv1.weight
+        , %para349 : Ref[Tensor(F32)][4096]    # moment1.tfm_decoder.layers.3.feedforward.conv1.bias
+        , %para350 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_decoder.layers.3.feedforward.conv2.weight
+        , %para351 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.feedforward.conv2.bias
+        , %para352 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para353 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para354 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.self_attention.attention.query_layer.weight
+        , %para355 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.self_attention.attention.key_layer.weight
+        , %para356 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.self_attention.attention.value_layer.weight
+        , %para357 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.self_attention.attention.out_layer.weight
+        , %para358 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.self_attention.preprocess.layernorm.gamma
+        , %para359 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.self_attention.preprocess.layernorm.beta
+        , %para360 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.cross_attention.attention.query_layer.weight
+        , %para361 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.cross_attention.attention.key_layer.weight
+        , %para362 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.cross_attention.attention.value_layer.weight
+        , %para363 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.4.cross_attention.attention.out_layer.weight
+        , %para364 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.cross_attention.preprocess.layernorm.gamma
+        , %para365 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.cross_attention.preprocess.layernorm.beta
+        , %para366 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_decoder.layers.4.feedforward.conv1.weight
+        , %para367 : Ref[Tensor(F32)][4096]    # moment1.tfm_decoder.layers.4.feedforward.conv1.bias
+        , %para368 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_decoder.layers.4.feedforward.conv2.weight
+        , %para369 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.feedforward.conv2.bias
+        , %para370 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para371 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para372 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.self_attention.attention.query_layer.weight
+        , %para373 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.self_attention.attention.key_layer.weight
+        , %para374 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.self_attention.attention.value_layer.weight
+        , %para375 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.self_attention.attention.out_layer.weight
+        , %para376 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.self_attention.preprocess.layernorm.gamma
+        , %para377 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.self_attention.preprocess.layernorm.beta
+        , %para378 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.cross_attention.attention.query_layer.weight
+        , %para379 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.cross_attention.attention.key_layer.weight
+        , %para380 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.cross_attention.attention.value_layer.weight
+        , %para381 : Ref[Tensor(F32)][512, 512]    # moment1.tfm_decoder.layers.5.cross_attention.attention.out_layer.weight
+        , %para382 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.cross_attention.preprocess.layernorm.gamma
+        , %para383 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.cross_attention.preprocess.layernorm.beta
+        , %para384 : Ref[Tensor(F32)][4096, 512]    # moment1.tfm_decoder.layers.5.feedforward.conv1.weight
+        , %para385 : Ref[Tensor(F32)][4096]    # moment1.tfm_decoder.layers.5.feedforward.conv1.bias
+        , %para386 : Ref[Tensor(F32)][512, 4096]    # moment1.tfm_decoder.layers.5.feedforward.conv2.weight
+        , %para387 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.feedforward.conv2.bias
+        , %para388 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para389 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para390 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layer_preprocess.layernorm.gamma
+        , %para391 : Ref[Tensor(F32)][512]    # moment1.tfm_decoder.layer_preprocess.layernorm.beta
+        , %para392 : Ref[Tensor(F32)][8, 10719, 8]    # moment2.tfm_embedding_lookup.weight1
+        , %para393 : Ref[Tensor(F32)][8, 10719, 8]    # moment2.tfm_embedding_lookup.weight2
+        , %para394 : Ref[Tensor(F32)][8, 10719, 8]    # moment2.tfm_embedding_lookup.weight3
+        , %para395 : Ref[Tensor(F32)][10149, 512]    # moment2.tfm_embedding_lookup.embedding_table
+        , %para396 : Ref[Tensor(F32)][512]    # moment2.tfm_embedding_lookup.ln.gamma
+        , %para397 : Ref[Tensor(F32)][512]    # moment2.tfm_embedding_lookup.ln.beta
+        , %para398 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.0.attention.attention.query_layer.weight
+        , %para399 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.0.attention.attention.key_layer.weight
+        , %para400 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.0.attention.attention.value_layer.weight
+        , %para401 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.0.attention.attention.out_layer.weight
+        , %para402 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.0.attention.preprocess.layernorm.gamma
+        , %para403 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.0.attention.preprocess.layernorm.beta
+        , %para404 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_encoder.layers.0.feedforward.conv1.weight
+        , %para405 : Ref[Tensor(F32)][4096]    # moment2.tfm_encoder.layers.0.feedforward.conv1.bias
+        , %para406 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_encoder.layers.0.feedforward.conv2.weight
+        , %para407 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.0.feedforward.conv2.bias
+        , %para408 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para409 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para410 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.1.attention.attention.query_layer.weight
+        , %para411 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.1.attention.attention.key_layer.weight
+        , %para412 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.1.attention.attention.value_layer.weight
+        , %para413 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.1.attention.attention.out_layer.weight
+        , %para414 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.1.attention.preprocess.layernorm.gamma
+        , %para415 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.1.attention.preprocess.layernorm.beta
+        , %para416 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_encoder.layers.1.feedforward.conv1.weight
+        , %para417 : Ref[Tensor(F32)][4096]    # moment2.tfm_encoder.layers.1.feedforward.conv1.bias
+        , %para418 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_encoder.layers.1.feedforward.conv2.weight
+        , %para419 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.1.feedforward.conv2.bias
+        , %para420 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para421 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para422 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.2.attention.attention.query_layer.weight
+        , %para423 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.2.attention.attention.key_layer.weight
+        , %para424 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.2.attention.attention.value_layer.weight
+        , %para425 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.2.attention.attention.out_layer.weight
+        , %para426 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.2.attention.preprocess.layernorm.gamma
+        , %para427 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.2.attention.preprocess.layernorm.beta
+        , %para428 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_encoder.layers.2.feedforward.conv1.weight
+        , %para429 : Ref[Tensor(F32)][4096]    # moment2.tfm_encoder.layers.2.feedforward.conv1.bias
+        , %para430 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_encoder.layers.2.feedforward.conv2.weight
+        , %para431 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.2.feedforward.conv2.bias
+        , %para432 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para433 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para434 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.3.attention.attention.query_layer.weight
+        , %para435 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.3.attention.attention.key_layer.weight
+        , %para436 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.3.attention.attention.value_layer.weight
+        , %para437 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.3.attention.attention.out_layer.weight
+        , %para438 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.3.attention.preprocess.layernorm.gamma
+        , %para439 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.3.attention.preprocess.layernorm.beta
+        , %para440 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_encoder.layers.3.feedforward.conv1.weight
+        , %para441 : Ref[Tensor(F32)][4096]    # moment2.tfm_encoder.layers.3.feedforward.conv1.bias
+        , %para442 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_encoder.layers.3.feedforward.conv2.weight
+        , %para443 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.3.feedforward.conv2.bias
+        , %para444 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para445 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para446 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.4.attention.attention.query_layer.weight
+        , %para447 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.4.attention.attention.key_layer.weight
+        , %para448 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.4.attention.attention.value_layer.weight
+        , %para449 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.4.attention.attention.out_layer.weight
+        , %para450 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.4.attention.preprocess.layernorm.gamma
+        , %para451 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.4.attention.preprocess.layernorm.beta
+        , %para452 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_encoder.layers.4.feedforward.conv1.weight
+        , %para453 : Ref[Tensor(F32)][4096]    # moment2.tfm_encoder.layers.4.feedforward.conv1.bias
+        , %para454 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_encoder.layers.4.feedforward.conv2.weight
+        , %para455 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.4.feedforward.conv2.bias
+        , %para456 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para457 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para458 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.5.attention.attention.query_layer.weight
+        , %para459 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.5.attention.attention.key_layer.weight
+        , %para460 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.5.attention.attention.value_layer.weight
+        , %para461 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_encoder.layers.5.attention.attention.out_layer.weight
+        , %para462 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.5.attention.preprocess.layernorm.gamma
+        , %para463 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.5.attention.preprocess.layernorm.beta
+        , %para464 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_encoder.layers.5.feedforward.conv1.weight
+        , %para465 : Ref[Tensor(F32)][4096]    # moment2.tfm_encoder.layers.5.feedforward.conv1.bias
+        , %para466 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_encoder.layers.5.feedforward.conv2.weight
+        , %para467 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.5.feedforward.conv2.bias
+        , %para468 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para469 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para470 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layer_preprocess.layernorm.gamma
+        , %para471 : Ref[Tensor(F32)][512]    # moment2.tfm_encoder.layer_preprocess.layernorm.beta
+        , %para472 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.self_attention.attention.query_layer.weight
+        , %para473 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.self_attention.attention.key_layer.weight
+        , %para474 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.self_attention.attention.value_layer.weight
+        , %para475 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.self_attention.attention.out_layer.weight
+        , %para476 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.self_attention.preprocess.layernorm.gamma
+        , %para477 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.self_attention.preprocess.layernorm.beta
+        , %para478 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.cross_attention.attention.query_layer.weight
+        , %para479 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.cross_attention.attention.key_layer.weight
+        , %para480 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.cross_attention.attention.value_layer.weight
+        , %para481 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.0.cross_attention.attention.out_layer.weight
+        , %para482 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.cross_attention.preprocess.layernorm.gamma
+        , %para483 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.cross_attention.preprocess.layernorm.beta
+        , %para484 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_decoder.layers.0.feedforward.conv1.weight
+        , %para485 : Ref[Tensor(F32)][4096]    # moment2.tfm_decoder.layers.0.feedforward.conv1.bias
+        , %para486 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_decoder.layers.0.feedforward.conv2.weight
+        , %para487 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.feedforward.conv2.bias
+        , %para488 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para489 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para490 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.self_attention.attention.query_layer.weight
+        , %para491 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.self_attention.attention.key_layer.weight
+        , %para492 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.self_attention.attention.value_layer.weight
+        , %para493 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.self_attention.attention.out_layer.weight
+        , %para494 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.self_attention.preprocess.layernorm.gamma
+        , %para495 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.self_attention.preprocess.layernorm.beta
+        , %para496 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.cross_attention.attention.query_layer.weight
+        , %para497 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.cross_attention.attention.key_layer.weight
+        , %para498 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.cross_attention.attention.value_layer.weight
+        , %para499 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.1.cross_attention.attention.out_layer.weight
+        , %para500 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.cross_attention.preprocess.layernorm.gamma
+        , %para501 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.cross_attention.preprocess.layernorm.beta
+        , %para502 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_decoder.layers.1.feedforward.conv1.weight
+        , %para503 : Ref[Tensor(F32)][4096]    # moment2.tfm_decoder.layers.1.feedforward.conv1.bias
+        , %para504 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_decoder.layers.1.feedforward.conv2.weight
+        , %para505 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.feedforward.conv2.bias
+        , %para506 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para507 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para508 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.self_attention.attention.query_layer.weight
+        , %para509 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.self_attention.attention.key_layer.weight
+        , %para510 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.self_attention.attention.value_layer.weight
+        , %para511 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.self_attention.attention.out_layer.weight
+        , %para512 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.self_attention.preprocess.layernorm.gamma
+        , %para513 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.self_attention.preprocess.layernorm.beta
+        , %para514 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.cross_attention.attention.query_layer.weight
+        , %para515 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.cross_attention.attention.key_layer.weight
+        , %para516 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.cross_attention.attention.value_layer.weight
+        , %para517 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.2.cross_attention.attention.out_layer.weight
+        , %para518 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.cross_attention.preprocess.layernorm.gamma
+        , %para519 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.cross_attention.preprocess.layernorm.beta
+        , %para520 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_decoder.layers.2.feedforward.conv1.weight
+        , %para521 : Ref[Tensor(F32)][4096]    # moment2.tfm_decoder.layers.2.feedforward.conv1.bias
+        , %para522 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_decoder.layers.2.feedforward.conv2.weight
+        , %para523 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.feedforward.conv2.bias
+        , %para524 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para525 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para526 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.self_attention.attention.query_layer.weight
+        , %para527 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.self_attention.attention.key_layer.weight
+        , %para528 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.self_attention.attention.value_layer.weight
+        , %para529 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.self_attention.attention.out_layer.weight
+        , %para530 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.self_attention.preprocess.layernorm.gamma
+        , %para531 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.self_attention.preprocess.layernorm.beta
+        , %para532 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.cross_attention.attention.query_layer.weight
+        , %para533 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.cross_attention.attention.key_layer.weight
+        , %para534 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.cross_attention.attention.value_layer.weight
+        , %para535 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.3.cross_attention.attention.out_layer.weight
+        , %para536 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.cross_attention.preprocess.layernorm.gamma
+        , %para537 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.cross_attention.preprocess.layernorm.beta
+        , %para538 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_decoder.layers.3.feedforward.conv1.weight
+        , %para539 : Ref[Tensor(F32)][4096]    # moment2.tfm_decoder.layers.3.feedforward.conv1.bias
+        , %para540 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_decoder.layers.3.feedforward.conv2.weight
+        , %para541 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.feedforward.conv2.bias
+        , %para542 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para543 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para544 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.self_attention.attention.query_layer.weight
+        , %para545 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.self_attention.attention.key_layer.weight
+        , %para546 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.self_attention.attention.value_layer.weight
+        , %para547 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.self_attention.attention.out_layer.weight
+        , %para548 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.self_attention.preprocess.layernorm.gamma
+        , %para549 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.self_attention.preprocess.layernorm.beta
+        , %para550 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.cross_attention.attention.query_layer.weight
+        , %para551 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.cross_attention.attention.key_layer.weight
+        , %para552 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.cross_attention.attention.value_layer.weight
+        , %para553 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.4.cross_attention.attention.out_layer.weight
+        , %para554 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.cross_attention.preprocess.layernorm.gamma
+        , %para555 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.cross_attention.preprocess.layernorm.beta
+        , %para556 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_decoder.layers.4.feedforward.conv1.weight
+        , %para557 : Ref[Tensor(F32)][4096]    # moment2.tfm_decoder.layers.4.feedforward.conv1.bias
+        , %para558 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_decoder.layers.4.feedforward.conv2.weight
+        , %para559 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.feedforward.conv2.bias
+        , %para560 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para561 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para562 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.self_attention.attention.query_layer.weight
+        , %para563 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.self_attention.attention.key_layer.weight
+        , %para564 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.self_attention.attention.value_layer.weight
+        , %para565 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.self_attention.attention.out_layer.weight
+        , %para566 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.self_attention.preprocess.layernorm.gamma
+        , %para567 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.self_attention.preprocess.layernorm.beta
+        , %para568 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.cross_attention.attention.query_layer.weight
+        , %para569 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.cross_attention.attention.key_layer.weight
+        , %para570 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.cross_attention.attention.value_layer.weight
+        , %para571 : Ref[Tensor(F32)][512, 512]    # moment2.tfm_decoder.layers.5.cross_attention.attention.out_layer.weight
+        , %para572 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.cross_attention.preprocess.layernorm.gamma
+        , %para573 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.cross_attention.preprocess.layernorm.beta
+        , %para574 : Ref[Tensor(F32)][4096, 512]    # moment2.tfm_decoder.layers.5.feedforward.conv1.weight
+        , %para575 : Ref[Tensor(F32)][4096]    # moment2.tfm_decoder.layers.5.feedforward.conv1.bias
+        , %para576 : Ref[Tensor(F32)][512, 4096]    # moment2.tfm_decoder.layers.5.feedforward.conv2.weight
+        , %para577 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.feedforward.conv2.bias
+        , %para578 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para579 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para580 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layer_preprocess.layernorm.gamma
+        , %para581 : Ref[Tensor(F32)][512]    # moment2.tfm_decoder.layer_preprocess.layernorm.beta
+        , %para582 : Ref[Tensor(F32)][8, 10719, 8]    # vhat.tfm_embedding_lookup.weight1
+        , %para583 : Ref[Tensor(F32)][8, 10719, 8]    # vhat.tfm_embedding_lookup.weight2
+        , %para584 : Ref[Tensor(F32)][8, 10719, 8]    # vhat.tfm_embedding_lookup.weight3
+        , %para585 : Ref[Tensor(F32)][10149, 512]    # vhat.tfm_embedding_lookup.embedding_table
+        , %para586 : Ref[Tensor(F32)][512]    # vhat.tfm_embedding_lookup.ln.gamma
+        , %para587 : Ref[Tensor(F32)][512]    # vhat.tfm_embedding_lookup.ln.beta
+        , %para588 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.0.attention.attention.query_layer.weight
+        , %para589 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.0.attention.attention.key_layer.weight
+        , %para590 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.0.attention.attention.value_layer.weight
+        , %para591 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.0.attention.attention.out_layer.weight
+        , %para592 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.0.attention.preprocess.layernorm.gamma
+        , %para593 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.0.attention.preprocess.layernorm.beta
+        , %para594 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_encoder.layers.0.feedforward.conv1.weight
+        , %para595 : Ref[Tensor(F32)][4096]    # vhat.tfm_encoder.layers.0.feedforward.conv1.bias
+        , %para596 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_encoder.layers.0.feedforward.conv2.weight
+        , %para597 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.0.feedforward.conv2.bias
+        , %para598 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para599 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para600 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.1.attention.attention.query_layer.weight
+        , %para601 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.1.attention.attention.key_layer.weight
+        , %para602 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.1.attention.attention.value_layer.weight
+        , %para603 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.1.attention.attention.out_layer.weight
+        , %para604 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.1.attention.preprocess.layernorm.gamma
+        , %para605 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.1.attention.preprocess.layernorm.beta
+        , %para606 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_encoder.layers.1.feedforward.conv1.weight
+        , %para607 : Ref[Tensor(F32)][4096]    # vhat.tfm_encoder.layers.1.feedforward.conv1.bias
+        , %para608 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_encoder.layers.1.feedforward.conv2.weight
+        , %para609 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.1.feedforward.conv2.bias
+        , %para610 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para611 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para612 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.2.attention.attention.query_layer.weight
+        , %para613 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.2.attention.attention.key_layer.weight
+        , %para614 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.2.attention.attention.value_layer.weight
+        , %para615 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.2.attention.attention.out_layer.weight
+        , %para616 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.2.attention.preprocess.layernorm.gamma
+        , %para617 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.2.attention.preprocess.layernorm.beta
+        , %para618 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_encoder.layers.2.feedforward.conv1.weight
+        , %para619 : Ref[Tensor(F32)][4096]    # vhat.tfm_encoder.layers.2.feedforward.conv1.bias
+        , %para620 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_encoder.layers.2.feedforward.conv2.weight
+        , %para621 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.2.feedforward.conv2.bias
+        , %para622 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para623 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para624 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.3.attention.attention.query_layer.weight
+        , %para625 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.3.attention.attention.key_layer.weight
+        , %para626 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.3.attention.attention.value_layer.weight
+        , %para627 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.3.attention.attention.out_layer.weight
+        , %para628 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.3.attention.preprocess.layernorm.gamma
+        , %para629 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.3.attention.preprocess.layernorm.beta
+        , %para630 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_encoder.layers.3.feedforward.conv1.weight
+        , %para631 : Ref[Tensor(F32)][4096]    # vhat.tfm_encoder.layers.3.feedforward.conv1.bias
+        , %para632 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_encoder.layers.3.feedforward.conv2.weight
+        , %para633 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.3.feedforward.conv2.bias
+        , %para634 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para635 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para636 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.4.attention.attention.query_layer.weight
+        , %para637 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.4.attention.attention.key_layer.weight
+        , %para638 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.4.attention.attention.value_layer.weight
+        , %para639 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.4.attention.attention.out_layer.weight
+        , %para640 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.4.attention.preprocess.layernorm.gamma
+        , %para641 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.4.attention.preprocess.layernorm.beta
+        , %para642 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_encoder.layers.4.feedforward.conv1.weight
+        , %para643 : Ref[Tensor(F32)][4096]    # vhat.tfm_encoder.layers.4.feedforward.conv1.bias
+        , %para644 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_encoder.layers.4.feedforward.conv2.weight
+        , %para645 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.4.feedforward.conv2.bias
+        , %para646 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para647 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para648 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.5.attention.attention.query_layer.weight
+        , %para649 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.5.attention.attention.key_layer.weight
+        , %para650 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.5.attention.attention.value_layer.weight
+        , %para651 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_encoder.layers.5.attention.attention.out_layer.weight
+        , %para652 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.5.attention.preprocess.layernorm.gamma
+        , %para653 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.5.attention.preprocess.layernorm.beta
+        , %para654 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_encoder.layers.5.feedforward.conv1.weight
+        , %para655 : Ref[Tensor(F32)][4096]    # vhat.tfm_encoder.layers.5.feedforward.conv1.bias
+        , %para656 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_encoder.layers.5.feedforward.conv2.weight
+        , %para657 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.5.feedforward.conv2.bias
+        , %para658 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para659 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para660 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layer_preprocess.layernorm.gamma
+        , %para661 : Ref[Tensor(F32)][512]    # vhat.tfm_encoder.layer_preprocess.layernorm.beta
+        , %para662 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.self_attention.attention.query_layer.weight
+        , %para663 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.self_attention.attention.key_layer.weight
+        , %para664 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.self_attention.attention.value_layer.weight
+        , %para665 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.self_attention.attention.out_layer.weight
+        , %para666 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.self_attention.preprocess.layernorm.gamma
+        , %para667 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.self_attention.preprocess.layernorm.beta
+        , %para668 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.cross_attention.attention.query_layer.weight
+        , %para669 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.cross_attention.attention.key_layer.weight
+        , %para670 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.cross_attention.attention.value_layer.weight
+        , %para671 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.0.cross_attention.attention.out_layer.weight
+        , %para672 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.cross_attention.preprocess.layernorm.gamma
+        , %para673 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.cross_attention.preprocess.layernorm.beta
+        , %para674 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_decoder.layers.0.feedforward.conv1.weight
+        , %para675 : Ref[Tensor(F32)][4096]    # vhat.tfm_decoder.layers.0.feedforward.conv1.bias
+        , %para676 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_decoder.layers.0.feedforward.conv2.weight
+        , %para677 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.feedforward.conv2.bias
+        , %para678 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.feedforward.preprocess.layernorm.gamma
+        , %para679 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.0.feedforward.preprocess.layernorm.beta
+        , %para680 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.self_attention.attention.query_layer.weight
+        , %para681 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.self_attention.attention.key_layer.weight
+        , %para682 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.self_attention.attention.value_layer.weight
+        , %para683 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.self_attention.attention.out_layer.weight
+        , %para684 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.self_attention.preprocess.layernorm.gamma
+        , %para685 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.self_attention.preprocess.layernorm.beta
+        , %para686 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.cross_attention.attention.query_layer.weight
+        , %para687 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.cross_attention.attention.key_layer.weight
+        , %para688 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.cross_attention.attention.value_layer.weight
+        , %para689 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.1.cross_attention.attention.out_layer.weight
+        , %para690 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.cross_attention.preprocess.layernorm.gamma
+        , %para691 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.cross_attention.preprocess.layernorm.beta
+        , %para692 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_decoder.layers.1.feedforward.conv1.weight
+        , %para693 : Ref[Tensor(F32)][4096]    # vhat.tfm_decoder.layers.1.feedforward.conv1.bias
+        , %para694 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_decoder.layers.1.feedforward.conv2.weight
+        , %para695 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.feedforward.conv2.bias
+        , %para696 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.feedforward.preprocess.layernorm.gamma
+        , %para697 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.1.feedforward.preprocess.layernorm.beta
+        , %para698 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.self_attention.attention.query_layer.weight
+        , %para699 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.self_attention.attention.key_layer.weight
+        , %para700 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.self_attention.attention.value_layer.weight
+        , %para701 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.self_attention.attention.out_layer.weight
+        , %para702 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.self_attention.preprocess.layernorm.gamma
+        , %para703 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.self_attention.preprocess.layernorm.beta
+        , %para704 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.cross_attention.attention.query_layer.weight
+        , %para705 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.cross_attention.attention.key_layer.weight
+        , %para706 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.cross_attention.attention.value_layer.weight
+        , %para707 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.2.cross_attention.attention.out_layer.weight
+        , %para708 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.cross_attention.preprocess.layernorm.gamma
+        , %para709 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.cross_attention.preprocess.layernorm.beta
+        , %para710 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_decoder.layers.2.feedforward.conv1.weight
+        , %para711 : Ref[Tensor(F32)][4096]    # vhat.tfm_decoder.layers.2.feedforward.conv1.bias
+        , %para712 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_decoder.layers.2.feedforward.conv2.weight
+        , %para713 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.feedforward.conv2.bias
+        , %para714 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.feedforward.preprocess.layernorm.gamma
+        , %para715 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.2.feedforward.preprocess.layernorm.beta
+        , %para716 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.self_attention.attention.query_layer.weight
+        , %para717 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.self_attention.attention.key_layer.weight
+        , %para718 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.self_attention.attention.value_layer.weight
+        , %para719 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.self_attention.attention.out_layer.weight
+        , %para720 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.self_attention.preprocess.layernorm.gamma
+        , %para721 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.self_attention.preprocess.layernorm.beta
+        , %para722 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.cross_attention.attention.query_layer.weight
+        , %para723 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.cross_attention.attention.key_layer.weight
+        , %para724 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.cross_attention.attention.value_layer.weight
+        , %para725 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.3.cross_attention.attention.out_layer.weight
+        , %para726 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.cross_attention.preprocess.layernorm.gamma
+        , %para727 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.cross_attention.preprocess.layernorm.beta
+        , %para728 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_decoder.layers.3.feedforward.conv1.weight
+        , %para729 : Ref[Tensor(F32)][4096]    # vhat.tfm_decoder.layers.3.feedforward.conv1.bias
+        , %para730 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_decoder.layers.3.feedforward.conv2.weight
+        , %para731 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.feedforward.conv2.bias
+        , %para732 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.feedforward.preprocess.layernorm.gamma
+        , %para733 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.3.feedforward.preprocess.layernorm.beta
+        , %para734 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.self_attention.attention.query_layer.weight
+        , %para735 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.self_attention.attention.key_layer.weight
+        , %para736 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.self_attention.attention.value_layer.weight
+        , %para737 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.self_attention.attention.out_layer.weight
+        , %para738 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.self_attention.preprocess.layernorm.gamma
+        , %para739 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.self_attention.preprocess.layernorm.beta
+        , %para740 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.cross_attention.attention.query_layer.weight
+        , %para741 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.cross_attention.attention.key_layer.weight
+        , %para742 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.cross_attention.attention.value_layer.weight
+        , %para743 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.4.cross_attention.attention.out_layer.weight
+        , %para744 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.cross_attention.preprocess.layernorm.gamma
+        , %para745 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.cross_attention.preprocess.layernorm.beta
+        , %para746 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_decoder.layers.4.feedforward.conv1.weight
+        , %para747 : Ref[Tensor(F32)][4096]    # vhat.tfm_decoder.layers.4.feedforward.conv1.bias
+        , %para748 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_decoder.layers.4.feedforward.conv2.weight
+        , %para749 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.feedforward.conv2.bias
+        , %para750 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.feedforward.preprocess.layernorm.gamma
+        , %para751 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.4.feedforward.preprocess.layernorm.beta
+        , %para752 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.self_attention.attention.query_layer.weight
+        , %para753 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.self_attention.attention.key_layer.weight
+        , %para754 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.self_attention.attention.value_layer.weight
+        , %para755 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.self_attention.attention.out_layer.weight
+        , %para756 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.self_attention.preprocess.layernorm.gamma
+        , %para757 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.self_attention.preprocess.layernorm.beta
+        , %para758 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.cross_attention.attention.query_layer.weight
+        , %para759 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.cross_attention.attention.key_layer.weight
+        , %para760 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.cross_attention.attention.value_layer.weight
+        , %para761 : Ref[Tensor(F32)][512, 512]    # vhat.tfm_decoder.layers.5.cross_attention.attention.out_layer.weight
+        , %para762 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.cross_attention.preprocess.layernorm.gamma
+        , %para763 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.cross_attention.preprocess.layernorm.beta
+        , %para764 : Ref[Tensor(F32)][4096, 512]    # vhat.tfm_decoder.layers.5.feedforward.conv1.weight
+        , %para765 : Ref[Tensor(F32)][4096]    # vhat.tfm_decoder.layers.5.feedforward.conv1.bias
+        , %para766 : Ref[Tensor(F32)][512, 4096]    # vhat.tfm_decoder.layers.5.feedforward.conv2.weight
+        , %para767 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.feedforward.conv2.bias
+        , %para768 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.feedforward.preprocess.layernorm.gamma
+        , %para769 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layers.5.feedforward.preprocess.layernorm.beta
+        , %para770 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layer_preprocess.layernorm.gamma
+        , %para771 : Ref[Tensor(F32)][512]    # vhat.tfm_decoder.layer_preprocess.layernorm.beta
+        , %para772 : Ref[Tensor(F32)][1331200]    # learning_rate
+        , %para773 : Ref[Tensor(I32)][1]    # global_step
+    ) {
+
+#------------------------> 0
+    %1 = FuncGraph::fg_28(%para1, %para2, %para3, %para4, %para5, %para6, None)    #(Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], NoneTypeNoShape)    # fg_28=Default.28 #scope: Default
+#[CNode]29
+    Primitive::Return{prim_type=1}(%1)    #(Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/#[CNode]30
+}
+# order:
+#   1: @Default_wrapper.18:[CNode]29{[0]: ValueNode<FuncGraph> Default.28, [1]: source_eos_ids, [2]: source_eos_mask, [3]: target_sos_ids, [4]: target_sos_mask, [5]: target_eos_ids, [6]: target_eos_mask, [7]: ValueNode<None> None}
+#   2: @Default_wrapper.18:[CNode]30{[0]: ValueNode<Primitive> Return, [1]: [CNode]29}
+
+
+# [No.2] Default.19
+# In file /code/mte/src/transformer_for_train.py:252/    def construct(self,/
+funcgraph fg_19[fg_18](
+        %para774 : Tensor(I32)[96, 16]    # фsource_ids
+        , %para775 : Tensor(I32)[96, 16]    # фsource_mask
+        , %para776 : Tensor(I32)[96, 16]    # фtarget_ids
+        , %para777 : Tensor(I32)[96, 16]    # фtarget_mask
+        , %para778 : Tensor(I32)[96, 16]    # фlabel_ids
+        , %para779 : Tensor(I32)[96, 16]    # фlabel_weights
+        , %para780 : NoneTypeNoShape    # фsens
+    ) {
+    %1 : BoolNoShape = DoSignaturePrimitive::S-Prim-is_{prim_type=1}(%para780, None)    #(NoneTypeNoShape, NoneTypeNoShape) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/#[CNode]31
+    %2 : BoolNoShape = FuncGraph::fg_32(%1)    #(BoolNoShape)    # fg_32=bool_.32 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/#[CNode]33
+    %3 : FuncNoShape = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_34, FuncGraph::fg_35)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_34=✓Default.34, fg_35=✗Default.35 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/#[CNode]36
+    %4 : Ref[Tensor(F32)][] = %3() #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/#[CNode]37
+
+#------------------------> 1
+    %5 = FuncGraph::fg_20(%4)    #(Ref[Tensor(F32)][])    # fg_20=↓Default.20 #scope: Default
+#[CNode]38
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/#[CNode]39
+}
+# order:
+#   1: @Default.19:фloss{[0]: ValueNode<FuncGraph> Default/network.22, [1]: фsource_ids, [2]: фsource_mask, [3]: фtarget_ids, [4]: фtarget_mask, [5]: фlabel_ids, [6]: фlabel_weights}
+#   2: @Default.19:[CNode]31{[0]: ValueNode<DoSignaturePrimitive> S-Prim-is_, [1]: фsens, [2]: ValueNode<None> None}
+#   3: @Default.19:[CNode]33{[0]: ValueNode<FuncGraph> bool_.32, [1]: [CNode]31}
+#   4: @Default.19:[CNode]36{[0]: ValueNode<Primitive> Switch, [1]: [CNode]33, [2]: ValueNode<FuncGraph> ✓Default.34, [3]: ValueNode<FuncGraph> ✗Default.35}
+#   5: @Default.19:[CNode]37{[0]: [CNode]36}
+#   6: @Default.19:[CNode]38{[0]: ValueNode<FuncGraph> ↓Default.20, [1]: [CNode]37}
+#   7: @Default.19:[CNode]39{[0]: ValueNode<Primitive> Return, [1]: [CNode]38}
+
+
+# [No.3] ↓Default.20
+# In file /code/mte/src/transformer_for_train.py:275/        if sens is None:/
+funcgraph fg_20[fg_19](
+        %para781 : Ref[Tensor(F32)][]    # фscaling_sens
+    ) {
+    %1 : BoolNoShape = DoSignaturePrimitive::S-Prim-is_{prim_type=1}(%para780, None)    #(NoneTypeNoShape, NoneTypeNoShape) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/#[CNode]40
+    %2 : BoolNoShape = FuncGraph::fg_32(%1)    #(BoolNoShape)    # fg_32=bool_.32 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/#[CNode]41
+    %3 : FuncNoShape = Primitive::Switch{prim_type=1}(%2, FuncGraph::fg_21, FuncGraph::fg_42)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_21=✓↓Default.21, fg_42=✗↓Default.42 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/#[CNode]43
+
+#------------------------> 2
+    %4 = %3() #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/#[CNode]44
+    %5 = FuncGraph::fg_45(%4)    #(Undefined)    # fg_45=↓↓Default.45 #scope: Default
+#[CNode]46
+    Primitive::Return{prim_type=1}(%5)    #(Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/#[CNode]47
+}
+# order:
+#   1: @↓Default.20:[CNode]48{[0]: ValueNode<FuncGraph> start_overflow_check.49, [1]: фloss, [2]: фscaling_sens}
+#   2: @↓Default.20:status{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]48, [2]: ValueNode<Int64Imm> 0}
+#   3: @↓Default.20:фscaling_sens{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]48, [2]: ValueNode<Int64Imm> 1}
+#   4: @↓Default.20:[CNode]50{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: фscaling_sens, [2]: ValueNode<Float> Float32}
+#   5: @↓Default.20:grads{[0]: ValueNode<UnpackGraphPrimitive> UnpackGraph, [1]: ValueNode<FuncGraph> Default/network.22, [2]: фsource_ids, [3]: фsource_mask, [4]: фtarget_ids, [5]: фtarget_mask, [6]: фlabel_ids, [7]: фlabel_weights, [8]: [CNode]50}
+#   6: @↓Default.20:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-grad, [1]: grads, [2]: [CNode]51}
+#   7: @↓Default.20:grads{[0]: grads, [1]: фsource_ids, [2]: фsource_mask, [3]: фtarget_ids, [4]: фtarget_mask, [5]: фlabel_ids, [6]: фlabel_weights, [7]: [CNode]50}
+#   8: @↓Default.20:grads{[0]: ValueNode<DoSignaturePrimitive> S-Prim-identity, [1]: grads}
+#   9: @↓Default.20:grads{[0]: ValueNode<FuncGraph> clip_scale_grads.52, [1]: фscaling_sens, [2]: grads}
+#  10: @↓Default.20:фgrads{[0]: ValueNode<FuncGraph> clip_grads.53, [1]: grads}
+#  11: @↓Default.20:фcond{[0]: ValueNode<FuncGraph> get_overflow_status.54, [1]: status, [2]: фgrads}
+#  12: @↓Default.20:[CNode]40{[0]: ValueNode<DoSignaturePrimitive> S-Prim-is_, [1]: фsens, [2]: ValueNode<None> None}
+#  13: @↓Default.20:[CNode]41{[0]: ValueNode<FuncGraph> bool_.32, [1]: [CNode]40}
+#  14: @↓Default.20:[CNode]43{[0]: ValueNode<Primitive> Switch, [1]: [CNode]41, [2]: ValueNode<FuncGraph> ✓↓Default.21, [3]: ValueNode<FuncGraph> ✗↓Default.42}
+#  15: @↓Default.20:[CNode]44{[0]: [CNode]43}
+#  16: @↓Default.20:[CNode]46{[0]: ValueNode<FuncGraph> ↓↓Default.45, [1]: [CNode]44}
+#  17: @↓Default.20:[CNode]47{[0]: ValueNode<Primitive> Return, [1]: [CNode]46}
+
+
+# [No.4] ✓↓Default.21
+# In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/
+funcgraph fg_21[fg_20](
+) {
+
+#------------------------> 3
+    %1 = $(Default.19):FuncGraph::fg_22(%para774, %para775, %para776, %para777, %para778, %para779)    #(Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16])    # fg_22=Default/network.22 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:300/        return (loss, cond, scaling_sens.value())/#фloss
+    %2 = $(↓Default.20):FuncGraph::fg_49(%1, %para781)    #(Undefined, Undefined)    # fg_49=start_overflow_check.49 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:279/        status, scaling_sens = self.start_overflow_check(loss, scaling_sens)/#[CNode]48
+    %3 = $(↓Default.20):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(0))    #(Undefined, Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:279/        status, scaling_sens = self.start_overflow_check(loss, scaling_sens)/#status
+    %4 = $(↓Default.20):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(1))    #(Undefined, Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:300/        return (loss, cond, scaling_sens.value())/#фscaling_sens
+    %5 = $(↓Default.20):DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"]](%4, F32)    #(Undefined, Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:286/                                                 self.cast(scaling_sens,/#[CNode]50
+    %6 = $(↓Default.20):UnpackGraphPrimitive::UnpackGraph{prim_type=1}(FuncGraph::fg_22, %para774, %para775, %para776, %para777, %para778, %para779, %5)    #(Undefined, Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Undefined)    # fg_22=Default/network.22 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:280/        grads = self.grad(self.network, weights)(source_ids,/#grads
+    %7 = $(Default.19):Primitive::MakeTuple{prim_type=1}(%para9, %para10, %para11, %para12, %para13, %para14, %para15, %para16, %para17, %para18, %para19, %para20, %para21, %para22, %para23, %para24, %para25, %para26, %para27, %para28, %para29, %para30, %para31, %para32, %para33, %para34, %para35, %para36, %para37, %para38, %para39, %para40, %para41, %para42, %para43, %para44, %para45, %para46, %para47, %para48, %para49, %para50, %para51, %para52, %para53, %para54, %para55, %para56, %para57, %para58, %para59, %para60, %para61, %para62, %para63, %para64, %para65, %para66, %para67, %para68, %para69, %para70, %para71, %para72, %para73, %para74, %para75, %para76, %para77, %para78, %para79, %para80, %para81, %para82, %para83, %para84, %para85, %para86, %para87, %para88, %para89, %para90, %para91, %para92, %para93, %para94, %para95, %para96, %para97, %para98, %para99, %para100, %para101, %para102, %para103, %para104, %para105, %para106, %para107, %para108, %para109, %para110, %para111, %para112, %para113, %para114, %para115, %para116, %para117, %para118, %para119, %para120, %para121, %para122, %para123, %para124, %para125, %para126, %para127, %para128, %para129, %para130, %para131, %para132, %para133, %para134, %para135, %para136, %para137, %para138, %para139, %para140, %para141, %para142, %para143, %para144, %para145, %para146, %para147, %para148, %para149, %para150, %para151, %para152, %para153, %para154, %para155, %para156, %para157, %para158, %para159, %para160, %para161, %para162, %para163, %para164, %para165, %para166, %para167, %para168, %para169, %para170, %para171, %para172, %para173, %para174, %para175, %para176, %para177, %para178, %para179, %para180, %para181, %para182, %para183, %para184, %para185, %para186, %para187, %para188, %para189, %para190, %para191, %para192, %para193, %para194, %para195, %para196, %para197, %para198)    #(Ref[Tensor(F32)][8, 10719, 8], Ref[Tensor(F32)][8, 10719, 8], Ref[Tensor(F32)][8, 10719, 8], Ref[Tensor(F32)][10149, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512, 512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][4096, 512], Ref[Tensor(F32)][4096], Ref[Tensor(F32)][512, 4096], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512], Ref[Tensor(F32)][512]) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:280/        grads = self.grad(self.network, weights)(source_ids,/#[CNode]51
+    %8 = $(↓Default.20):DoSignaturePrimitive::S-Prim-grad{prim_type=1}(%6, %7)    #(Undefined, Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:280/        grads = self.grad(self.network, weights)(source_ids,/#grads
+    %9 = $(↓Default.20):%8(%para774, %para775, %para776, %para777, %para778, %para779, %5)    #(Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:280/        grads = self.grad(self.network, weights)(source_ids,/#grads
+    %10 = $(↓Default.20):DoSignaturePrimitive::S-Prim-identity{prim_type=1}[side_effect_propagate=I64(1)](%9)    #(Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:290/        grads = self.grad_reducer(grads)/#grads
+    %11 = $(↓Default.20):FuncGraph::fg_52(%4, %10)    #(Undefined, Undefined)    # fg_52=clip_scale_grads.52 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:291/        grads = self.clip_scale_grads(scaling_sens, grads)/#grads
+    %12 = $(↓Default.20):FuncGraph::fg_53(%11)    #(Undefined)    # fg_53=clip_grads.53 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:299/            self.optimizer(grads)/#фgrads
+    %13 = $(↓Default.20):FuncGraph::fg_54(%3, %12)    #(Undefined, Undefined)    # fg_54=get_overflow_status.54 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:300/        return (loss, cond, scaling_sens.value())/#фcond
+    %14 = FuncGraph::fg_55(%para7, %13)    #(Ref[Tensor(F32)][], Undefined)    # fg_55=Default/loss_scaling_manager.55 #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:297/            overflow = self.loss_scaling_manager(self.loss_scale, cond)/#overflow
+    Primitive::Return{prim_type=1}(%14)    #(Undefined) #scope: Default
+      # In file /code/mte/src/transformer_for_train.py:296/        if sens is None:/#[CNode]56
+}
+# order:
+#   1: @✓↓Default.21:overflow{[0]: ValueNode<FuncGraph> Default/loss_scaling_manager.55, [1]: loss_scale, [2]: фcond}
+#   2: @✓↓Default.21:[CNode]56{[0]: ValueNode<Primitive> Return, [1]: overflow}
+
+
+# [No.5] Default/network.22
+# In file /code/mte/src/transformer_for_train.py:120/    def construct(self,/
+funcgraph fg_22[fg_18](
+        %para782 : Tensor(I32)[96, 16]    # source_ids
+        , %para783 : Tensor(I32)[96, 16]    # source_mask
+        , %para784 : Tensor(I32)[96, 16]    # target_ids
+        , %para785 : Tensor(I32)[96, 16]    # target_mask
+        , %para786 : Tensor(I32)[96, 16]    # label_ids
+        , %para787 : Tensor(I32)[96, 16]    # label_weights
+    ) {
+
+#------------------------> 4
+    %1 = FuncGraph::fg_57(%para782, %para783, %para784, %para785)    #(Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16], Tensor(I32)[96, 16])    # fg_57=Default/network/transformer.57 #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:128/        prediction_scores = self.transformer(source_ids, source_mask, target_ids, target_mask)/#prediction_scores
+    %2 = DoSignaturePrimitive::S-Prim-Shape{prim_type=1}(%para782)    #(Tensor(I32)[96, 16]) #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:131/        seq_length = self.shape(source_ids)[1]/#[CNode]58
+    %3 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%2, I64(1))    #(Undefined, Undefined) #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:131/        seq_length = self.shape(source_ids)[1]/#seq_length
+    %4 = FuncGraph::fg_59(%1, %para786, %para787, %3)    #(Undefined, Tensor(I32)[96, 16], Tensor(I32)[96, 16], Undefined)    # fg_59=Default/network/loss.59 #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:132/        total_loss = self.loss(prediction_scores, label_ids, label_weights, seq_length)/#total_loss
+    %5 = FuncGraph::fg_60(%4)    #(Undefined)    # fg_60=print_.60 #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:133/        print(total_loss)/#[CNode]61
+    %6 = Primitive::stop_gradient{prim_type=1}(%5)    #(Undefined) #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:269/        loss = self.network(source_ids,/#[CNode]62
+    %7 = DoSignaturePrimitive::S-Prim-Cast{prim_type=1}[output_names=["output"], input_names=["x", "dst_type"]](%4, F32)    #(Undefined, Undefined) #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:134/        return self.cast(total_loss, ms.float32)/#[CNode]63
+    %8 = Primitive::Depend{prim_type=1}[side_effect_propagate=I64(1)](%7, %6)    #(Undefined, Undefined) #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:269/        loss = self.network(source_ids,/#[CNode]64
+    Primitive::Return{prim_type=1}(%8)    #(Undefined) #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:134/        return self.cast(total_loss, ms.float32)/#[CNode]65
+}
+# order:
+#   1: @Default/network.22:prediction_scores{[0]: ValueNode<FuncGraph> Default/network/transformer.57, [1]: source_ids, [2]: source_mask, [3]: target_ids, [4]: target_mask}
+#   2: @Default/network.22:[CNode]58{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Shape, [1]: source_ids}
+#   3: @Default/network.22:seq_length{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]58, [2]: ValueNode<Int64Imm> 1}
+#   4: @Default/network.22:total_loss{[0]: ValueNode<FuncGraph> Default/network/loss.59, [1]: prediction_scores, [2]: label_ids, [3]: label_weights, [4]: seq_length}
+#   5: @Default/network.22:[CNode]61{[0]: ValueNode<FuncGraph> print_.60, [1]: total_loss}
+#   6: @Default/network.22:[CNode]63{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Cast, [1]: total_loss, [2]: ValueNode<Float> Float32}
+#   7: @Default/network.22:[CNode]65{[0]: ValueNode<Primitive> Return, [1]: [CNode]64}
+
+
+# [No.6] Default/network/transformer.23
+# In file /code/mte/src/transformer_model.py:1244/    def construct(self, source_ids, source_mask, target_ids=None, target_mask=None):/
+funcgraph fg_23[fg_18](
+        %para788 : Tensor(I32)[96, 16]    # source_ids
+        , %para789 : Tensor(I32)[96, 16]    # source_mask
+        , %para790 : Tensor(I32)[96, 16]    # target_ids
+        , %para791 : Tensor(I32)[96, 16]    # target_mask
+    ) {
+    %1 : BoolNoShape = FuncGraph::fg_66(Bool(1))    #(BoolNoShape)    # fg_66=bool_.66 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1258/        if self.is_training:/#[CNode]67
+    %2 : FuncNoShape = Primitive::Switch{prim_type=1}(%1, FuncGraph::fg_24, FuncGraph::fg_68)    #(BoolNoShape, FuncNoShape, FuncNoShape)    # fg_24=✓Default/network/transformer.24, fg_68=✗Default/network/transformer.68 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1258/        if self.is_training:/#[CNode]69
+
+#------------------------> 5
+    %3 = %2() #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1258/        if self.is_training:/#[CNode]70
+    %4 = FuncGraph::fg_71(%3)    #(Undefined)    # fg_71=↓Default/network/transformer.71 #scope: Default/network
+      # In file /code/mte/src/transformer_for_train.py:128/        prediction_scores = self.transformer(source_ids, source_mask, target_ids, target_mask)/#[CNode]72
+    Primitive::Return{prim_type=1}(%4)    #(Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1258/        if self.is_training:/#[CNode]73
+}
+# order:
+#   1: @Default/network/transformer.23:[CNode]74{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Shape, [1]: source_ids}
+#   2: @Default/network/transformer.23:seq_length{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]74, [2]: ValueNode<Int64Imm> 1}
+#   3: @Default/network/transformer.23:[CNode]75{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_embedding_lookup.25, [1]: source_ids}
+#   4: @Default/network/transformer.23:src_word_embeddings{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]75, [2]: ValueNode<Int64Imm> 0}
+#   5: @Default/network/transformer.23:embedding_tables{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]75, [2]: ValueNode<Int64Imm> 1}
+#   6: @Default/network/transformer.23:src_embedding_output{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_embedding_postprocessor_for_encoder.76, [1]: src_word_embeddings}
+#   7: @Default/network/transformer.23:enc_attention_mask{[0]: ValueNode<FuncGraph> Default/network/transformer/_create_attention_mask_from_input_mask.77, [1]: source_mask}
+#   8: @Default/network/transformer.23:[CNode]78{[0]: ValueNode<FuncGraph> Default/network/transformer/cast_compute_type.79, [1]: src_embedding_output}
+#   9: @Default/network/transformer.23:[CNode]80{[0]: ValueNode<FuncGraph> Default/network/transformer/cast_compute_type.79, [1]: enc_attention_mask}
+#  10: @Default/network/transformer.23:encoder_output{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_encoder.81, [1]: [CNode]78, [2]: [CNode]80, [3]: seq_length}
+#  11: @Default/network/transformer.23:[CNode]67{[0]: ValueNode<FuncGraph> bool_.66, [1]: ValueNode<BoolImm> true}
+#  12: @Default/network/transformer.23:[CNode]82{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:src.transformer_model..<TransformerModel::140093821535344>', [2]: ValueNode<Symbol> tile_beam}
+#  13: @Default/network/transformer.23:[CNode]83{[0]: ValueNode<Primitive> resolve, [1]: ValueNode<NameSpace> ClassMember: 'Namespace:src.transformer_model..<TransformerModel::140093821535344>', [2]: ValueNode<Symbol> encdec_mask}
+#  14: @Default/network/transformer.23:[CNode]69{[0]: ValueNode<Primitive> Switch, [1]: [CNode]67, [2]: ValueNode<FuncGraph> ✓Default/network/transformer.24, [3]: ValueNode<FuncGraph> ✗Default/network/transformer.68}
+#  15: @Default/network/transformer.23:[CNode]70{[0]: [CNode]69}
+#  16: @Default/network/transformer.23:[CNode]72{[0]: ValueNode<FuncGraph> ↓Default/network/transformer.71, [1]: [CNode]70}
+#  17: @Default/network/transformer.23:[CNode]73{[0]: ValueNode<Primitive> Return, [1]: [CNode]72}
+
+
+# [No.7] ✓Default/network/transformer.24
+# In file /code/mte/src/transformer_model.py:1258/        if self.is_training:/
+funcgraph fg_24[fg_23](
+) {
+
+#------------------------> 6
+    %1 = FuncGraph::fg_25(%para790)    #(Tensor(I32)[96, 16])    # fg_25=Default/network/transformer/tfm_embedding_lookup.25 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1261/            tgt_word_embeddings, _ = self.tfm_embedding_lookup(target_ids)/#[CNode]84
+    %2 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, I64(0))    #(Undefined, Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1261/            tgt_word_embeddings, _ = self.tfm_embedding_lookup(target_ids)/#tgt_word_embeddings
+    %3 = FuncGraph::fg_85(%2)    #(Undefined)    # fg_85=Default/network/transformer/tfm_embedding_postprocessor_for_decoder.85 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1262/            tgt_embedding_output = self.tfm_embedding_postprocessor_for_decoder(tgt_word_embeddings)/#tgt_embedding_output
+    %4 = FuncGraph::fg_79(%3)    #(Undefined)    # fg_79=Default/network/transformer/cast_compute_type.79 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1267/            decoder_output = self.tfm_decoder(self.cast_compute_type(tgt_embedding_output),/#[CNode]86
+    %5 = FuncGraph::fg_77(%para791)    #(Tensor(I32)[96, 16])    # fg_77=Default/network/transformer/_create_attention_mask_from_input_mask.77 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1264/            tgt_attention_mask = self._create_attention_mask_from_input_mask(target_mask)/#tgt_attention_mask
+    %6 = $(Default/network/transformer.23):DoSignaturePrimitive::S-Prim-Shape{prim_type=1}(%para788)    #(Tensor(I32)[96, 16]) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1246/        seq_length = self.shape(source_ids)[1]/#[CNode]74
+    %7 = $(Default/network/transformer.23):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%6, I64(1))    #(Undefined, Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1246/        seq_length = self.shape(source_ids)[1]/#seq_length
+    %8 = DoSignaturePrimitive::S-Prim-convert_np_to_tensor_encoder{prim_type=1}(%7)    #(Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1259/            future_mask = convert_np_to_tensor_encoder(seq_length)/#future_mask
+    %9 = DoSignaturePrimitive::S-Prim-ExpandDims{prim_type=1}[output_names=["output"], input_names=["x", "axis"]](%8, I64(0))    #(Undefined, Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1265/            tgt_attention_mask = self.multiply(tgt_attention_mask, self.expand(future_mask, 0))/#[CNode]87
+    %10 = DoSignaturePrimitive::S-Prim-Mul{prim_type=1}[output_names=["output"], input_names=["x", "y"]](%5, %9)    #(Undefined, Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1265/            tgt_attention_mask = self.multiply(tgt_attention_mask, self.expand(future_mask, 0))/#tgt_attention_mask
+    %11 = FuncGraph::fg_79(%10)    #(Undefined)    # fg_79=Default/network/transformer/cast_compute_type.79 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1268/                                              self.cast_compute_type(tgt_attention_mask),/#[CNode]88
+    %12 = $(Default/network/transformer.23):FuncGraph::fg_25(%para788)    #(Tensor(I32)[96, 16])    # fg_25=Default/network/transformer/tfm_embedding_lookup.25 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1249/        src_word_embeddings, embedding_tables = self.tfm_embedding_lookup(source_ids)/#[CNode]75
+    %13 = $(Default/network/transformer.23):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%12, I64(0))    #(Undefined, Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1249/        src_word_embeddings, embedding_tables = self.tfm_embedding_lookup(source_ids)/#src_word_embeddings
+    %14 = $(Default/network/transformer.23):FuncGraph::fg_76(%13)    #(Undefined)    # fg_76=Default/network/transformer/tfm_embedding_postprocessor_for_encoder.76 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1250/        src_embedding_output = self.tfm_embedding_postprocessor_for_encoder(src_word_embeddings)/#src_embedding_output
+    %15 = $(Default/network/transformer.23):FuncGraph::fg_79(%14)    #(Undefined)    # fg_79=Default/network/transformer/cast_compute_type.79 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1254/        encoder_output = self.tfm_encoder(self.cast_compute_type(src_embedding_output),/#[CNode]78
+    %16 = $(Default/network/transformer.23):FuncGraph::fg_77(%para789)    #(Tensor(I32)[96, 16])    # fg_77=Default/network/transformer/_create_attention_mask_from_input_mask.77 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1252/        enc_attention_mask = self._create_attention_mask_from_input_mask(source_mask)/#enc_attention_mask
+    %17 = $(Default/network/transformer.23):FuncGraph::fg_79(%16)    #(Undefined)    # fg_79=Default/network/transformer/cast_compute_type.79 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1255/                                          self.cast_compute_type(enc_attention_mask),/#[CNode]80
+    %18 = $(Default/network/transformer.23):FuncGraph::fg_81(%15, %17, %7)    #(Undefined, Undefined, Undefined)    # fg_81=Default/network/transformer/tfm_encoder.81 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1254/        encoder_output = self.tfm_encoder(self.cast_compute_type(src_embedding_output),/#encoder_output
+    %19 = FuncGraph::fg_89(%4, %11, %18, %16, %7, %7)    #(Undefined, Undefined, Undefined, Undefined, Undefined, Undefined)    # fg_89=Default/network/transformer/tfm_decoder.89 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1267/            decoder_output = self.tfm_decoder(self.cast_compute_type(tgt_embedding_output),/#decoder_output
+    %20 = $(Default/network/transformer.23):DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%12, I64(1))    #(Undefined, Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1249/        src_word_embeddings, embedding_tables = self.tfm_embedding_lookup(source_ids)/#embedding_tables
+    %21 = FuncGraph::fg_90(%19, %20, %7)    #(Undefined, Undefined, Undefined)    # fg_90=Default/network/transformer/projection.90 #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1272/            log_probs = self.projection(decoder_output, embedding_tables, seq_length)/#ret
+    Primitive::Return{prim_type=1}(%21)    #(Undefined) #scope: Default/network/transformer
+      # In file /code/mte/src/transformer_model.py:1258/        if self.is_training:/#[CNode]91
+}
+# order:
+#   1: @✓Default/network/transformer.24:future_mask{[0]: ValueNode<DoSignaturePrimitive> S-Prim-convert_np_to_tensor_encoder, [1]: seq_length}
+#   2: @✓Default/network/transformer.24:[CNode]84{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_embedding_lookup.25, [1]: target_ids}
+#   3: @✓Default/network/transformer.24:tgt_word_embeddings{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: [CNode]84, [2]: ValueNode<Int64Imm> 0}
+#   4: @✓Default/network/transformer.24:tgt_embedding_output{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_embedding_postprocessor_for_decoder.85, [1]: tgt_word_embeddings}
+#   5: @✓Default/network/transformer.24:tgt_attention_mask{[0]: ValueNode<FuncGraph> Default/network/transformer/_create_attention_mask_from_input_mask.77, [1]: target_mask}
+#   6: @✓Default/network/transformer.24:[CNode]87{[0]: ValueNode<DoSignaturePrimitive> S-Prim-ExpandDims, [1]: future_mask, [2]: ValueNode<Int64Imm> 0}
+#   7: @✓Default/network/transformer.24:tgt_attention_mask{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Mul, [1]: tgt_attention_mask, [2]: [CNode]87}
+#   8: @✓Default/network/transformer.24:[CNode]86{[0]: ValueNode<FuncGraph> Default/network/transformer/cast_compute_type.79, [1]: tgt_embedding_output}
+#   9: @✓Default/network/transformer.24:[CNode]88{[0]: ValueNode<FuncGraph> Default/network/transformer/cast_compute_type.79, [1]: tgt_attention_mask}
+#  10: @✓Default/network/transformer.24:decoder_output{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_decoder.89, [1]: [CNode]86, [2]: [CNode]88, [3]: encoder_output, [4]: enc_attention_mask, [5]: seq_length, [6]: seq_length}
+#  11: @✓Default/network/transformer.24:ret{[0]: ValueNode<FuncGraph> Default/network/transformer/projection.90, [1]: decoder_output, [2]: embedding_tables, [3]: seq_length}
+#  12: @✓Default/network/transformer.24:[CNode]91{[0]: ValueNode<Primitive> Return, [1]: ret}
+
+
+# [No.8] Default/network/transformer/tfm_embedding_lookup.25
+# In file /code/mte/src/transformer_model.py:250/    def construct(self, input_ids):/
+funcgraph fg_25[fg_18](
+        %para792 : Tensor(I32)[96, 16]    # input_ids
+    ) {
+
+#------------------------> 7
+    %1 = FuncGraph::fg_26()    # fg_26=get_emb_matrix.26 #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:256/        embedding_table = self.get_emb_matrix()/#embedding_table
+    %2 = DoSignaturePrimitive::S-Prim-Reshape{prim_type=1}[output_names=["output"], input_names=["tensor", "shape"]](%para792, (I64(-1)))    #(Tensor(I32)[96, 16], Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:254/        flat_ids = self.reshape(input_ids, self.shape_flat)/#flat_ids
+    %3 = DoSignaturePrimitive::S-Prim-Gather{prim_type=1}[output_names=["output"], input_names=["params", "indices", "axis"]](%1, %2, I64(0))    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:258/        output_for_reshape = self.gather(embedding_table, flat_ids, 0)/#output_for_reshape
+    %4 = DoSignaturePrimitive::S-Prim-Shape{prim_type=1}(%para792)    #(Tensor(I32)[96, 16]) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:252/        input_shape = self.shape(input_ids)/#input_shape
+    %5 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(512))    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:260/        out_shape = input_shape + (self.embedding_size,)/#[CNode]92
+    %6 = DoSignaturePrimitive::S-Prim-add{prim_type=1}(%4, %5)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:260/        out_shape = input_shape + (self.embedding_size,)/#out_shape
+    %7 = DoSignaturePrimitive::S-Prim-Reshape{prim_type=1}[output_names=["output"], input_names=["tensor", "shape"]](%3, %6)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:261/        output = self.reshape(output_for_reshape, out_shape)/#output
+    %8 = Primitive::getattr{prim_type=1}(%1, "value")    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:263/        return output, embedding_table.value()/#[CNode]93
+    %9 = %8() #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:263/        return output, embedding_table.value()/#[CNode]94
+    %10 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%7, %9)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:263/        return output, embedding_table.value()/#[CNode]95
+    Primitive::Return{prim_type=1}(%10)    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:263/        return output, embedding_table.value()/#[CNode]96
+}
+# order:
+#   1: @Default/network/transformer/tfm_embedding_lookup.25:input_shape{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Shape, [1]: input_ids}
+#   2: @Default/network/transformer/tfm_embedding_lookup.25:flat_ids{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Reshape, [1]: input_ids, [2]: ValueNode<ValueTuple> (-1)}
+#   3: @Default/network/transformer/tfm_embedding_lookup.25:embedding_table{[0]: ValueNode<FuncGraph> get_emb_matrix.26}
+#   4: @Default/network/transformer/tfm_embedding_lookup.25:output_for_reshape{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Gather, [1]: embedding_table, [2]: flat_ids, [3]: ValueNode<Int64Imm> 0}
+#   5: @Default/network/transformer/tfm_embedding_lookup.25:[CNode]92{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 512}
+#   6: @Default/network/transformer/tfm_embedding_lookup.25:out_shape{[0]: ValueNode<DoSignaturePrimitive> S-Prim-add, [1]: input_shape, [2]: [CNode]92}
+#   7: @Default/network/transformer/tfm_embedding_lookup.25:output{[0]: ValueNode<DoSignaturePrimitive> S-Prim-Reshape, [1]: output_for_reshape, [2]: out_shape}
+#   8: @Default/network/transformer/tfm_embedding_lookup.25:[CNode]93{[0]: ValueNode<Primitive> getattr, [1]: embedding_table, [2]: ValueNode<StringImm> value}
+#   9: @Default/network/transformer/tfm_embedding_lookup.25:[CNode]94{[0]: [CNode]93}
+#  10: @Default/network/transformer/tfm_embedding_lookup.25:[CNode]95{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: output, [2]: [CNode]94}
+#  11: @Default/network/transformer/tfm_embedding_lookup.25:[CNode]96{[0]: ValueNode<Primitive> Return, [1]: [CNode]95}
+
+
+# [No.9] get_emb_matrix.26
+# In file /code/mte/src/transformer_model.py:230/    def get_emb_matrix(self):/
+funcgraph fg_26[fg_18](
+) {
+
+#------------------------> 8
+    %1 = FuncGraph::fg_27(I64(1), %para9)    #(I64NoShape, Ref[Tensor(F32)][8, 10719, 8])    # fg_27=get_ith_core.27 #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:231/        w1 = self.get_ith_core(1, self.weight1)/#w1
+    %2 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]97
+    %3 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]98
+    %4 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]99
+    %5 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%2, %3, %4, None)    #(Undefined, Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]100
+    %6 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%1, %5)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]101
+    %7 = FuncGraph::fg_27(I64(2), %para10)    #(Undefined, Ref[Tensor(F32)][8, 10719, 8])    # fg_27=get_ith_core.27 #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:232/        w2 = self.get_ith_core(2, self.weight2)/#w2
+    %8 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]102
+    %9 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]103
+    %10 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]104
+    %11 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%8, %9, None, %10)    #(Undefined, Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]105
+    %12 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%7, %11)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#[CNode]106
+    %13 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%6, %12)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:235/        w = w1[:, :, :, None] * w2[:, :, None, :]/#w
+    %14 = Primitive::getattr{prim_type=1}(%13, "view")    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:237/        w = w.view(self.rank, self.vocab_size, -1)/#[CNode]107
+    %15 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:237/        w = w.view(self.rank, self.vocab_size, -1)/#[CNode]108
+    %16 = %14(I64(8), I64(10149), %15)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:237/        w = w.view(self.rank, self.vocab_size, -1)/#w
+    %17 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]109
+    %18 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]110
+    %19 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]111
+    %20 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%17, %18, %19, None)    #(Undefined, Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]112
+    %21 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%16, %20)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]113
+    %22 = FuncGraph::fg_27(I64(3), %para11)    #(Undefined, Ref[Tensor(F32)][8, 10719, 8])    # fg_27=get_ith_core.27 #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:233/        w3 = self.get_ith_core(3, self.weight3)/#w3
+    %23 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]114
+    %24 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]115
+    %25 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]116
+    %26 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%23, %24, None, %25)    #(Undefined, Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]117
+    %27 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%22, %26)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#[CNode]118
+    %28 = DoSignaturePrimitive::S-Prim-mul{prim_type=1}(%21, %27)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:239/        w = w[:, :, :, None] * w3[:, :, None, :]/#w
+    %29 = Primitive::getattr{prim_type=1}(%28, "view")    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:240/        w = w.view(self.rank, self.vocab_size, -1)/#[CNode]119
+    %30 = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:240/        w = w.view(self.rank, self.vocab_size, -1)/#[CNode]120
+    %31 = %29(I64(8), I64(10149), %30)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:240/        w = w.view(self.rank, self.vocab_size, -1)/#w
+    %32 = Primitive::getattr{prim_type=1}(%31, "sum")    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:242/        w = w.sum(0)/#[CNode]121
+    %33 = %32(I64(0))    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:242/        w = w.sum(0)/#w
+    %34 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:244/        w = w[:, :self.embedding_size]/#[CNode]122
+    %35 = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, I64(512), None)    #(Undefined, Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:244/        w = w[:, :self.embedding_size]/#[CNode]123
+    %36 = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%34, %35)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:244/        w = w[:, :self.embedding_size]/#[CNode]124
+    %37 = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(%33, %36)    #(Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:244/        w = w[:, :self.embedding_size]/#w
+    %38 = FuncGraph::fg_125(%37)    #(Undefined)    # fg_125=Default/network/transformer/tfm_embedding_lookup/ln.125 #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:246/        w = self.ln(w)/#w
+    Primitive::Return{prim_type=1}(%38)    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:248/        return w #self.embedding_table/#[CNode]126
+}
+# order:
+#   1: @get_emb_matrix.26:w1{[0]: ValueNode<FuncGraph> get_ith_core.27, [1]: ValueNode<Int64Imm> 1, [2]: tfm_embedding_lookup.weight1}
+#   2: @get_emb_matrix.26:w2{[0]: ValueNode<FuncGraph> get_ith_core.27, [1]: ValueNode<Int64Imm> 2, [2]: tfm_embedding_lookup.weight2}
+#   3: @get_emb_matrix.26:w3{[0]: ValueNode<FuncGraph> get_ith_core.27, [1]: ValueNode<Int64Imm> 3, [2]: tfm_embedding_lookup.weight3}
+#   4: @get_emb_matrix.26:[CNode]97{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   5: @get_emb_matrix.26:[CNode]98{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   6: @get_emb_matrix.26:[CNode]99{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   7: @get_emb_matrix.26:[CNode]100{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]97, [2]: [CNode]98, [3]: [CNode]99, [4]: ValueNode<None> None}
+#   8: @get_emb_matrix.26:[CNode]101{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: w1, [2]: [CNode]100}
+#   9: @get_emb_matrix.26:[CNode]102{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  10: @get_emb_matrix.26:[CNode]103{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  11: @get_emb_matrix.26:[CNode]104{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  12: @get_emb_matrix.26:[CNode]105{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]102, [2]: [CNode]103, [3]: ValueNode<None> None, [4]: [CNode]104}
+#  13: @get_emb_matrix.26:[CNode]106{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: w2, [2]: [CNode]105}
+#  14: @get_emb_matrix.26:w{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: [CNode]101, [2]: [CNode]106}
+#  15: @get_emb_matrix.26:[CNode]107{[0]: ValueNode<Primitive> getattr, [1]: w, [2]: ValueNode<StringImm> view}
+#  16: @get_emb_matrix.26:[CNode]108{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#  17: @get_emb_matrix.26:w{[0]: [CNode]107, [1]: ValueNode<Int64Imm> 8, [2]: ValueNode<Int64Imm> 10149, [3]: [CNode]108}
+#  18: @get_emb_matrix.26:[CNode]109{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  19: @get_emb_matrix.26:[CNode]110{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  20: @get_emb_matrix.26:[CNode]111{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  21: @get_emb_matrix.26:[CNode]112{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]109, [2]: [CNode]110, [3]: [CNode]111, [4]: ValueNode<None> None}
+#  22: @get_emb_matrix.26:[CNode]113{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: w, [2]: [CNode]112}
+#  23: @get_emb_matrix.26:[CNode]114{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  24: @get_emb_matrix.26:[CNode]115{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  25: @get_emb_matrix.26:[CNode]116{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  26: @get_emb_matrix.26:[CNode]117{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]114, [2]: [CNode]115, [3]: ValueNode<None> None, [4]: [CNode]116}
+#  27: @get_emb_matrix.26:[CNode]118{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: w3, [2]: [CNode]117}
+#  28: @get_emb_matrix.26:w{[0]: ValueNode<DoSignaturePrimitive> S-Prim-mul, [1]: [CNode]113, [2]: [CNode]118}
+#  29: @get_emb_matrix.26:[CNode]119{[0]: ValueNode<Primitive> getattr, [1]: w, [2]: ValueNode<StringImm> view}
+#  30: @get_emb_matrix.26:[CNode]120{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#  31: @get_emb_matrix.26:w{[0]: [CNode]119, [1]: ValueNode<Int64Imm> 8, [2]: ValueNode<Int64Imm> 10149, [3]: [CNode]120}
+#  32: @get_emb_matrix.26:[CNode]121{[0]: ValueNode<Primitive> getattr, [1]: w, [2]: ValueNode<StringImm> sum}
+#  33: @get_emb_matrix.26:w{[0]: [CNode]121, [1]: ValueNode<Int64Imm> 0}
+#  34: @get_emb_matrix.26:[CNode]122{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#  35: @get_emb_matrix.26:[CNode]123{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<Int64Imm> 512, [3]: ValueNode<None> None}
+#  36: @get_emb_matrix.26:[CNode]124{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]122, [2]: [CNode]123}
+#  37: @get_emb_matrix.26:w{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: w, [2]: [CNode]124}
+#  38: @get_emb_matrix.26:w{[0]: ValueNode<FuncGraph> Default/network/transformer/tfm_embedding_lookup/ln.125, [1]: w}
+#  39: @get_emb_matrix.26:[CNode]126{[0]: ValueNode<Primitive> Return, [1]: w}
+
+
+# [No.10] get_ith_core.27
+# In file /code/mte/src/transformer_model.py:215/    def get_ith_core(self, ith, weight):/
+funcgraph fg_27(
+        %para793 : I64NoShape    # ith
+        , %para794 : Ref[Tensor(F32)][8, 10719, 8]    # weight
+    ) {
+    %1 : Tuple[String]TupleShape(NoShape) = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}("shape")    #(StringNoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:221/        co_inx = ops.BroadcastTo(shape=(self.rank, self.vocab_size, self.core_dim))(co_inx)/#[CNode]127
+    %2 : Tuple[I64*3]TupleShape(NoShape, NoShape, NoShape) = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(I64(8), I64(10149), I64(8))    #(I64NoShape, I64NoShape, I64NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:221/        co_inx = ops.BroadcastTo(shape=(self.rank, self.vocab_size, self.core_dim))(co_inx)/#[CNode]128
+    %3 : Tuple[Tuple[I64*3]]TupleShape(TupleShape(NoShape, NoShape, NoShape)) = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%2)    #(Tuple[I64*3]TupleShape(NoShape, NoShape, NoShape)) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:221/        co_inx = ops.BroadcastTo(shape=(self.rank, self.vocab_size, self.core_dim))(co_inx)/#[CNode]129
+    %4 : Dictionary[[shape,],[Tuple[Int64*3]]]NoShape = DoSignaturePrimitive::S-Prim-make_dict{prim_type=1}(%1, %3)    #(Tuple[String]TupleShape(NoShape), Tuple[Tuple[I64*3]]TupleShape(TupleShape(NoShape, NoShape, NoShape))) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:221/        co_inx = ops.BroadcastTo(shape=(self.rank, self.vocab_size, self.core_dim))(co_inx)/#[CNode]130
+    %5 : FuncNoShape = UnpackCall::unpack_call(ClassType, %4)    #(FuncNoShape, Dictionary[[shape,],[Tuple[Int64*3]]]NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:221/        co_inx = ops.BroadcastTo(shape=(self.rank, self.vocab_size, self.core_dim))(co_inx)/#[CNode]131
+    %6 : Slice[None : None : None]NoShape = DoSignaturePrimitive::S-Prim-make_slice{prim_type=1}(None, None, None)    #(NoneTypeNoShape, NoneTypeNoShape, NoneTypeNoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:219/        co_inx = self.expand(self.expand(self.co_matrix[:, ith], 0), -1)/#[CNode]132
+    %7 : I64NoShape = DoSignaturePrimitive::S-Prim-sub{prim_type=1}(%para793, I64(1))    #(I64NoShape, I64NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:218/        ith = ith - 1/#ith
+    %8 : Tuple[Slice[None : None : None],I64]TupleShape(NoShape, NoShape) = DoSignaturePrimitive::S-Prim-MakeTuple{prim_type=1}(%6, %7)    #(Slice[None : None : None]NoShape, I64NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:219/        co_inx = self.expand(self.expand(self.co_matrix[:, ith], 0), -1)/#[CNode]133
+    %9 : Tensor(I32)[41279] = DoSignaturePrimitive::S-Prim-getitem{prim_type=1}(Tensor(34)[41279, 3], %8)    #(Tensor(I32)[41279, 3], Tuple[Slice[None : None : None],I64]TupleShape(NoShape, NoShape)) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:219/        co_inx = self.expand(self.expand(self.co_matrix[:, ith], 0), -1)/#[CNode]134
+    %10 : Tensor(I32)[1, 41279] = DoSignaturePrimitive::S-Prim-ExpandDims{prim_type=1}[output_names=["output"], input_names=["x", "axis"]](%9, I64(0))    #(Tensor(I32)[41279], I64NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:219/        co_inx = self.expand(self.expand(self.co_matrix[:, ith], 0), -1)/#[CNode]135
+    %11 : I64NoShape = DoSignaturePrimitive::S-Prim-negative{prim_type=1}(I64(1))    #(I64NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:219/        co_inx = self.expand(self.expand(self.co_matrix[:, ith], 0), -1)/#[CNode]136
+    %12 : Tensor(I32)[1, 41279, 1] = DoSignaturePrimitive::S-Prim-ExpandDims{prim_type=1}[output_names=["output"], input_names=["x", "axis"]](%10, %11)    #(Tensor(I32)[1, 41279], I64NoShape) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:219/        co_inx = self.expand(self.expand(self.co_matrix[:, ith], 0), -1)/#co_inx
+
+#------------------------> 9
+    %13 = %5(%12)    #(Tensor(I32)[1, 41279, 1]) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:221/        co_inx = ops.BroadcastTo(shape=(self.rank, self.vocab_size, self.core_dim))(co_inx)/#co_inx
+    %14 = DoSignaturePrimitive::S-Prim-GatherD{prim_type=1}[output_names=["output"], input_names=["x", "dim", "index"]](%para794, I64(1), %13)    #(Ref[Tensor(F32)][8, 10719, 8], Undefined, Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:224/        w_slice = self.gatherD(weight, 1, co_inx)/#w_slice
+    Primitive::Return{prim_type=1}(%14)    #(Undefined) #scope: Default/network/transformer/tfm_embedding_lookup
+      # In file /code/mte/src/transformer_model.py:228/        return w_slice/#[CNode]137
+}
+# order:
+#   1: @get_ith_core.27:ith{[0]: ValueNode<DoSignaturePrimitive> S-Prim-sub, [1]: ith, [2]: ValueNode<Int64Imm> 1}
+#   2: @get_ith_core.27:[CNode]132{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_slice, [1]: ValueNode<None> None, [2]: ValueNode<None> None, [3]: ValueNode<None> None}
+#   3: @get_ith_core.27:[CNode]133{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]132, [2]: ith}
+#   4: @get_ith_core.27:[CNode]134{[0]: ValueNode<DoSignaturePrimitive> S-Prim-getitem, [1]: ValueNode<Tensor> Tensor(shape=[41279, 3], dtype=Int32, value=[...]), [2]: [CNode]133}
+#   5: @get_ith_core.27:[CNode]135{[0]: ValueNode<DoSignaturePrimitive> S-Prim-ExpandDims, [1]: [CNode]134, [2]: ValueNode<Int64Imm> 0}
+#   6: @get_ith_core.27:[CNode]136{[0]: ValueNode<DoSignaturePrimitive> S-Prim-negative, [1]: ValueNode<Int64Imm> 1}
+#   7: @get_ith_core.27:co_inx{[0]: ValueNode<DoSignaturePrimitive> S-Prim-ExpandDims, [1]: [CNode]135, [2]: [CNode]136}
+#   8: @get_ith_core.27:[CNode]128{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<Int64Imm> 8, [2]: ValueNode<Int64Imm> 10149, [3]: ValueNode<Int64Imm> 8}
+#   9: @get_ith_core.27:[CNode]127{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: ValueNode<StringImm> shape}
+#  10: @get_ith_core.27:[CNode]129{[0]: ValueNode<DoSignaturePrimitive> S-Prim-MakeTuple, [1]: [CNode]128}
+#  11: @get_ith_core.27:[CNode]130{[0]: ValueNode<DoSignaturePrimitive> S-Prim-make_dict, [1]: [CNode]127, [2]: [CNode]129}
+#  12: @get_ith_core.27:[CNode]131{[0]: ValueNode<UnpackCall> unpack_call.138, [1]: ValueNode<ClassType> class 'mindspore.ops.operations.array_ops.BroadcastTo', [2]: [CNode]130}
+#  13: @get_ith_core.27:co_inx{[0]: [CNode]131, [1]: co_inx}
+#  14: @get_ith_core.27:w_slice{[0]: ValueNode<DoSignaturePrimitive> S-Prim-GatherD, [1]: weight, [2]: ValueNode<Int64Imm> 1, [3]: co_inx}
+#  15: @get_ith_core.27:[CNode]137{[0]: ValueNode<Primitive> Return, [1]: w_slice}
+
+
+#===============================================================================
+# num of function graphs in stack: 10/11 (Ignored 1 internal frames).

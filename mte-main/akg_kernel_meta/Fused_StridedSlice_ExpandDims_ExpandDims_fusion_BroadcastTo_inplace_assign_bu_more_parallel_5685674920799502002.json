@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":57,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_StridedSlice_ExpandDims_ExpandDims_fusion_BroadcastTo_inplace_assign_bu_more_parallel_5685674920799502002_kernel0",
+    "sha256":"909458c14e9bddbe3583aff1829fe095bcd33830d47600637f02569aa2c6d133",
+    "threadIdx.x":199,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

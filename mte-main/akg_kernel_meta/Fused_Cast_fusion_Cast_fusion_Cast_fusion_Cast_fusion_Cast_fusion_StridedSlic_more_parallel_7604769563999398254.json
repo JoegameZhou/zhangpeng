@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":2864,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_fusion_Cast_fusion_Cast_fusion_Cast_fusion_Cast_fusion_StridedSlic_more_parallel_7604769563999398254_kernel0",
+    "sha256":"fc4de76d2a9592f5f919892ebfd3e61d88e1ddf599ec00e46202dcc349944341",
+    "threadIdx.x":1024,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

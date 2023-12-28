@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":17,
+    "blockIdx.y":768,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Reshape_OneHot_Add_RealDiv_BroadcastTo_Mul_Neg_Reshape_BroadcastTo_Mul_split_7037579240911356889_kernel0",
+    "sha256":"e4e8918c27f30515e0b2233fcc920e966d5d77f8d596600ea6ad53d9c02112ea",
+    "threadIdx.x":597,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

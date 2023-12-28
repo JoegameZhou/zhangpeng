@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1177,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_fusion_Cast_fusion_Cast_fusion_Cast_fusion_StridedSlice_ExpandDims_more_parallel_13595208898307016214_kernel0",
+    "sha256":"556af86d3b72b15f912185dbac3274d7929d6cf7558f900db76924d7ea4db955",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

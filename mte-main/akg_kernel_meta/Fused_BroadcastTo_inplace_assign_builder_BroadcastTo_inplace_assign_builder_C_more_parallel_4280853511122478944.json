@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":173,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_BroadcastTo_inplace_assign_builder_BroadcastTo_inplace_assign_builder_C_more_parallel_4280853511122478944_kernel0",
+    "sha256":"9ea2d389d614008484140cc12277564ee1e2df8bf026be46ce572c768c9e0e26",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

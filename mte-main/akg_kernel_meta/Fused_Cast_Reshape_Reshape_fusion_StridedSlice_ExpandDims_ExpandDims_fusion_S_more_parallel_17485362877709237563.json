@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":211,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_Reshape_Reshape_fusion_StridedSlice_ExpandDims_ExpandDims_fusion_S_more_parallel_17485362877709237563_kernel0",
+    "sha256":"a19f8b0f2f694956e8e7a4e2b1eed620deaa07732bb3c9a610063154fc0decf8",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

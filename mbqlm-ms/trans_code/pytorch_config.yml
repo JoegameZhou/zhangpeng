@@ -1,0 +1,86 @@
+# model: 
+#   embedding_dim: 50   
+#   feature_dim: 2   
+#   dropout_keep_prob: 0.1  #0.2
+#   l2_reg_lambda: 0.00005 #0.00005
+#   learning_rate: 0.0005 #0.0003
+#   max_len: 30 #30
+#   # input_len: 31           
+#   loss: 'point_wise'    
+#   count: "wiki"               
+#   seed: 54321  #12345
+#   map_max: 0.65
+
+#   filter_sizes: "1,2,3"  #"1,2,3"
+#   num_filters: 50   #100
+
+# train:
+#   batch_size: 32  
+#   trainable: True   
+#   num_epochs: 30 
+#   checkpoint_every: 500     
+#   overlap_needed: True     
+#   position_needed: True    
+#   embedding_needed: True     
+#   pooling: 'max'     
+#   data: 'wiki'    
+#   CNN_type: 'qacnn'     
+#   dns: False    
+#   sample_train: 1     
+#   fresh: True     
+#   evaluate_every: 271    
+#   clean: True    
+
+
+# misc:
+#   allow_soft_placement: True     
+#   log_device_placement: False    
+
+
+# data_helper:
+#   isEnglish: True    
+#   isGlove: True 
+
+
+model: 
+  embedding_dim: 50   
+  feature_dim: 3      # 小一点  5以下
+  dropout_keep_prob: 0.3  # 不要太大 最大0.2  #0.009
+  l2_reg_lambda: 0.00003  #0.00003 
+  learning_rate: 0.001  #0.00055
+  max_len: 30         
+  loss: 'point_wise'    
+  count: "trec"               
+  seed: 789         # 123   321 111 这种类型的
+  map_max: 0.65
+
+  filter_sizes: "1,2,3"  # 不要太大  小于10 #3,4,5
+  num_filters: 128      # 300以下，50的倍数 #100
+train:
+  batch_size: 32
+  trainable: True   
+  num_epochs: 150
+  checkpoint_every: 1667
+  overlap_needed: True     
+  position_needed: True    
+  embedding_needed: True     
+  pooling: 'max'     
+  data: 'trec'    
+  CNN_type: 'qacnn'     
+  dns: False    
+  sample_train: 1     
+  fresh: True     
+  evaluate_every: 1667
+  clean: True
+  gpunum: 6
+  tid: '11'    
+
+
+misc:
+  allow_soft_placement: True     
+  log_device_placement: False    
+
+
+data_helper:
+  isEnglish: True    
+  isGlove: True  

@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":3072,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Sub_Mul_Cast_Mul_split_7229264574721211834_kernel0",
+    "sha256":"dfb2438d2bfb8390d570f68c2a509f657fe0ead2978fafb9b7010ff3582e9930",
+    "threadIdx.x":1024,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

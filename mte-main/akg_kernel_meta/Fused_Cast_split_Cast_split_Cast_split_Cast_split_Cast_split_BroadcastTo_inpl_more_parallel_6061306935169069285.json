@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":22,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_split_Cast_split_Cast_split_Cast_split_Cast_split_BroadcastTo_inpl_more_parallel_6061306935169069285_kernel0",
+    "sha256":"4edbda740bf8860f656fb5e599dd4da28f6d7c5b6282ea194c199d0a317c4b6c",
+    "threadIdx.x":32,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

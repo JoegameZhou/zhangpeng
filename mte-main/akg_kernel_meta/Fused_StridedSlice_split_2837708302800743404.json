@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1269,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_StridedSlice_split_2837708302800743404_kernel0",
+    "sha256":"439eeb55a622b4964514d488faefec3611c48d98d644d590f0f75736fded27ff",
+    "threadIdx.x":121,
+    "threadIdx.y":8,
+    "threadIdx.z":1
+}

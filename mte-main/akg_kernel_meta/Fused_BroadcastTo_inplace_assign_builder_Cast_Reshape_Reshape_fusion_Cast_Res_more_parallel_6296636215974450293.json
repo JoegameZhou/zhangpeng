@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1168,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_BroadcastTo_inplace_assign_builder_Cast_Reshape_Reshape_fusion_Cast_Res_more_parallel_6296636215974450293_kernel0",
+    "sha256":"23c25ed9c9973104c1bdc6391b45ad3c61f26bb76e0ef8f9a7205b9391d570a6",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

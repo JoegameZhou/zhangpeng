@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":7,
+    "blockIdx.y":192,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Sub_Exp_ReduceSum_split_6138191955623959372_kernel0",
+    "sha256":"214daed58fe29f41b56c7f12d2ebc17fe647d8f2e5f50e90b38b14ee1360484a",
+    "threadIdx.x":128,
+    "threadIdx.y":8,
+    "threadIdx.z":1
+}

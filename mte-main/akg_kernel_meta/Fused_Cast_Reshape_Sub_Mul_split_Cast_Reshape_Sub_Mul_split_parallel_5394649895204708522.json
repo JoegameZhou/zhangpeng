@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":768,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_Reshape_Sub_Mul_split_Cast_Reshape_Sub_Mul_split_parallel_5394649895204708522_kernel0",
+    "sha256":"c65fd68c05c71abcf2329c8e023bda3675d137f99b8c1d2757d19e33ce9cbf28",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

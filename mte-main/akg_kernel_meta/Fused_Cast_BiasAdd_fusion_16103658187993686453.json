@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":2,
+    "blockIdx.y":384,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_BiasAdd_fusion_16103658187993686453_kernel0",
+    "sha256":"94e96330786a4752e8ff3250c558043b96156b6b859b6e489ad8f58621057cb9",
+    "threadIdx.x":1024,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

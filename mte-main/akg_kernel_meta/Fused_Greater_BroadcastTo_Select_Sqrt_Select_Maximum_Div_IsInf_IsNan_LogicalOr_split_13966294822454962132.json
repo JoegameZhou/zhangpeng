@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":1,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Greater_BroadcastTo_Select_Sqrt_Select_Maximum_Div_IsInf_IsNan_LogicalOr_split_13966294822454962132_kernel0",
+    "sha256":"0bbf2d511ee59a9c1dd82235666f4a30416e13a83f62fedbc73737ff4a4569bd",
+    "threadIdx.x":128,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

@@ -1,0 +1,1 @@
+python3 CWQ/train.py --input_dir data/CWQ --save_dir checkpoints/CWQ_t —rev

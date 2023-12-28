@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":203,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_Cast_Reshape_Reshape_fusion_Cast_Reshape_Reshape_fusion_StridedSlice_Ex_more_parallel_12858984363826436715_kernel0",
+    "sha256":"6172e22eed4ac87a085130e7b13e5decb598e47de2838bdc4fa93366be95f2f1",
+    "threadIdx.x":256,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}

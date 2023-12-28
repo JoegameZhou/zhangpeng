@@ -1,0 +1,10 @@
+{
+    "blockIdx.x":4096,
+    "blockIdx.y":1,
+    "blockIdx.z":1,
+    "kernelName":"Fused_RealDiv_Cast_Mul_Cast_LessEqual_Cast_Mul_split_11373556405771280869_kernel0",
+    "sha256":"1e8669743c4d4e35dcdc07d8fa34849eeae491295e64a1f7c78f2107bf32be3c",
+    "threadIdx.x":864,
+    "threadIdx.y":1,
+    "threadIdx.z":1
+}
